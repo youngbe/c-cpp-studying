@@ -87,7 +87,7 @@ template<typename T,typename T2,typename T3>
 void qsort(const T begin,const T end,const long unsigned int n,int (*comp)(T2 a,T3 b));
 #ifndef qsort_sdfsdf
 #define qsort_sdfsdf
-template<typename T>
+/*template<typename T>
 void swap(T &a,T &b)
 {
     uint8_t *temp1=(uint8_t *)&a,*temp2=(uint8_t *)&b;
@@ -124,6 +124,48 @@ void swap(T &a,T &b)
         *temp1^=*temp2;
         *temp2^=*temp1;
         *temp1^=*temp2;
+        temp1++;
+        temp2++;
+        i--;
+    }
+}*/
+template<typename T>
+void swap(T &a,T &b)
+{
+    uint8_t *temp1=(uint8_t *)&a,*temp2=(uint8_t *)&b;
+    long unsigned int i=sizeof(T);
+    while(i>=sizeof(uint64_t))
+    {
+        uint64_t temp=*(uint64_t *)temp1;
+        *(uint64_t *)temp1=*(uint64_t *)temp2;
+        *(uint64_t *)temp2=temp;
+        temp1+=sizeof(uint64_t);
+        temp2+=sizeof(uint64_t);
+        i-=sizeof(uint64_t);
+    }
+    while(i>=sizeof(uint32_t))
+    {
+        uint32_t temp=*(uint32_t *)temp1;
+        *(uint32_t *)temp1=*(uint32_t *)temp2;
+        *(uint32_t *)temp2=temp;
+        temp1+=sizeof(uint32_t);
+        temp2+=sizeof(uint32_t);
+        i-=sizeof(uint32_t);
+    }
+    while(i>=sizeof(uint16_t))
+    {
+        uint16_t temp=*(uint16_t *)temp1;
+        *(uint16_t *)temp1=*(uint16_t *)temp2;
+        *(uint16_t *)temp2=temp;
+        temp1+=sizeof(uint16_t);
+        temp2+=sizeof(uint16_t);
+        i-=sizeof(uint16_t);
+    }
+    while(i!=0)
+    {
+        uint8_t temp=*temp1;
+        *temp1=*temp2;
+        *temp2=temp;
         temp1++;
         temp2++;
         i--;
