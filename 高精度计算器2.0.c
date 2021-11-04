@@ -689,7 +689,7 @@ void scan(Num *a,Num *b,int8_t *fuhao,LEN *baoliu)
     if(*fuhao==3)
     {
         printf("请输入至少保留多少位有效数字：\n");
-        while( ( (scanf("%lu",baoliu)!=1 || getchar()!='\n') && (xi(),1))|| ( *baoliu==0 && (printf("请输入大于0的数！\n"),1) ))
+        while( ( (scanf("%llu",baoliu)!=1 || getchar()!='\n') && (xi(),1))|| ( *baoliu==0 && (printf("请输入大于0的数！\n"),1) ))
         {
             printf("请输入至少保留多少位有效数字：\n");
         }
@@ -697,7 +697,7 @@ void scan(Num *a,Num *b,int8_t *fuhao,LEN *baoliu)
     LEN x;
     printf("请输入最大位数(不计小数点、负号)：\n");
     printf("比如若你要计算的两个数字为：-123(3位)和3.5685(5位)，则最大位数为5\n");
-    while(scanf("%lu",&x)!=1||getchar()!='\n')
+    while(scanf("%llu",&x)!=1||getchar()!='\n')
     {
         xi();
         printf("请输入最大位数：\n");
@@ -715,7 +715,7 @@ void scan(Num *a,Num *b,int8_t *fuhao,LEN *baoliu)
     }
     char temp;
     char temp_for_scanf[28];
-    sprintf(temp_for_scanf,"%%%lu[0-9.]",x+1);
+    sprintf(temp_for_scanf,"%%%llu[0-9.]",x+1);
     do
     {
         printf("请输入第一个数字(请输入合法数字，可包含小数点、数字、正负号)：\n");
@@ -855,7 +855,7 @@ label1:
             }
             temp_for_num[i]='\0';
             *a->num=0;
-            sscanf(temp_for_num,"%ld",(long *)a->num);
+            sscanf(temp_for_num,"%lld",(long long *)a->num);
             a->len=1;
             if(float_>=0)
             {
@@ -872,9 +872,9 @@ label1:
         a->num=(NUM_WIDTH *)malloc(sizeof(NUM_WIDTH)*a->len);
         num=a->num+a->len-1;
         char temp_for_sscanf[6];
-        sprintf(temp_for_sscanf,"%%%dld",(int)temp);
+        sprintf(temp_for_sscanf,"%%%dlld",(int)temp);
         *num=0;
-        sscanf(string,temp_for_sscanf,(long *)num);
+        sscanf(string,temp_for_sscanf,(long long *)num);
         num--;
         string+=temp;
         len-=temp;
@@ -889,7 +889,7 @@ label2:
     while(len/WEI!=0)
     {
         *num=0;
-        sscanf(string,"%" WEI_STR "ld",(long *)num);
+        sscanf(string,"%" WEI_STR "lld",(long long *)num);
         num--;
         string+=WEI;
         len-=WEI;
@@ -909,7 +909,7 @@ label2:
         }
         temp[i]='\0';
         *num=0;
-        sscanf(temp,"%" WEI_STR "ld",(long *)num);
+        sscanf(temp,"%" WEI_STR "lld",(long long *)num);
     }
     if(float_%WEI!=0)
     {
@@ -962,7 +962,7 @@ void print(Num const * const a)
             for(LEN i=a->len;i!=0;)
             {
                 i--;
-                printf("%." WEI_STR "ld",(long)a->num[i]);
+                printf("%." WEI_STR "lld",(long long)a->num[i]);
             }
             return;
         }
@@ -970,7 +970,7 @@ void print(Num const * const a)
         if((LEN)-a->float_segment==a->len)
         {
             char temp[WEI+1];
-            sprintf(temp,"%ld",(long)a->num[i]);
+            sprintf(temp,"%lld",(long long)a->num[i]);
             if(strlen(temp)<=(size_t)(WEI-a->float_offset))
             {
                 printf("0.");
@@ -992,14 +992,14 @@ void print(Num const * const a)
             }
             goto label1;
         }
-        printf("%ld",(long)a->num[i]);
+        printf("%lld",(long long)a->num[i]);
         i--;
         for(;i!=(LEN)(-a->float_segment-1);i--)
         {
-            printf("%." WEI_STR "ld",(long)a->num[i]);
+            printf("%." WEI_STR "lld",(long long)a->num[i]);
         }
         char temp[WEI+1];
-        sprintf(temp,"%." WEI_STR "ld",(long)a->num[i]);
+        sprintf(temp,"%." WEI_STR "lld",(long long)a->num[i]);
         for(uint8_t i=0;i<a->float_offset;i++)
         {
             putchar(temp[i]);
@@ -1013,16 +1013,16 @@ label1:
         for(;i!=0;)
         {
             i--;
-            printf("%." WEI_STR "ld",(long)a->num[i]);
+            printf("%." WEI_STR "lld",(long long)a->num[i]);
         }
     }
     else
     {
-        printf("%ld",(long)a->num[a->len-1]);
+        printf("%lld",(long long)a->num[a->len-1]);
         for(LEN i=a->len-1;i!=0;)
         {
             i--;
-            printf("%." WEI_STR "ld",(long)a->num[i]);
+            printf("%." WEI_STR "lld",(long long)a->num[i]);
         }
         for(FLOAT_WIDTH i=0;i<a->float_segment;i++)
         {
