@@ -92,8 +92,7 @@ echo "export LANG=zh_CN.utf8 LANGUAGE=zh_CN.utf8" >> "$HOME/.profile"
 dnf --setopt=install_weak_deps=0 install xfce4-session xfce4-panel xfce4-settings thunar dbus-x11 xfwm4 xfce4-terminal xfdesktop firefox pipewire at-spi2-core elementary-xfce-icon-theme xfce4-pulseaudio-plugin langpacks-zh_CN xfce-polkit polkit xfce4-notifyd
 #显卡驱动
 dnf --setopt=install_weak_deps=0 install mesa-dri-drivers mesa-vulkan-drivers mesa-libEGL mesa-libGL libglvnd libglvnd-egl libglvnd-gles libglvnd-glx libglvnd-opengl vulkan-loader
-/usr/lib64/dri/swrast_dri.so
-#libglx0 libvulkan1
+
 export DISPLAY=127.0.0.1:0 PULSE_SERVER=tcp:127.0.0.1:4713 MOZ_FAKE_NO_SANDBOX=1
 echo "export DISPLAY=127.0.0.1:0 PULSE_SERVER=tcp:127.0.0.1:4713 MOZ_FAKE_NO_SANDBOX=1" >> "$HOME/.profile"
 # 启动图形化界面
@@ -101,7 +100,7 @@ xfce4-session
 
 # qt 使用Xephyr或者VNC开启
 # Xephyr
-dnf --setopt=install_weak_deps=0 install qtcreator qt6-qtbase-devel xorg-x11-server-Xephyr
+dnf --setopt=install_weak_deps=0 install xorg-x11-server-Xephyr
 Xephyr -screen 2560x1600x16 :1
 DISPLAY=:1 xfce4-session
 
