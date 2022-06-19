@@ -87,7 +87,17 @@ echo "export LANG=zh_CN.utf8 LANGUAGE=zh_CN.utf8" >> "$HOME/.profile"
 # 安装图形化界面
 apt --no-install-recommends -y install xfce4-session xfce4-panel xfce4-settings thunar dbus-x11 xfwm4 xfce4-terminal xfdesktop4 firefox fonts-wqy-zenhei pulseaudio at-spi2-core elementary-xfce-icon-theme pm-utils libavcodec58 libpci3
 #显卡驱动
-apt --no-install-recommends -y install libgl1 libegl1
+#Vendor neutral GL/OpenGL:
+#libopengl0 libglvnd0 libgl1 libglx0 libegl1 libgles1 libgles2
+#mesa GL/OpenGL:
+#libglapi-mesa libgl1-mesa-dri libglx-mesa0 libgl1-mesa-glx libegl-mesa0 libegl1-mesa libgles2-mesa libglu1-mesa libglw1-mesa
+#mesa other:
+#mesa-utils mesa-utils-extra mesa-va-drivers mesa-vdpau-drivers
+#vulkan:
+#libvulkan1 mesa-vulkan-drivers
+#other:
+#pm-utils xserver-xorg-core xserver-common libxcb-glx0
+apt --no-install-recommends -y install libopengl0 libglvnd0 libgl1 libglx0 libegl1 libgles1 libgles2 libglapi-mesa libgl1-mesa-dri libglx-mesa0 libgl1-mesa-glx libegl-mesa0 libegl1-mesa libgles2-mesa libglu1-mesa libglw1-mesa mesa-utils mesa-utils-extra mesa-va-drivers mesa-vdpau-drivers libvulkan1 mesa-vulkan-drivers pm-utils xserver-xorg-core xserver-common libxcb-glx0
 
 export DISPLAY=127.0.0.1:0 PULSE_SERVER=tcp:127.0.0.1:4713 MOZ_FAKE_NO_SANDBOX=1
 echo "export DISPLAY=127.0.0.1:0 PULSE_SERVER=tcp:127.0.0.1:4713 MOZ_FAKE_NO_SANDBOX=1" >> "$HOME/.profile"
@@ -96,7 +106,7 @@ xfce4-session
 
 # qt 使用Xephyr或者VNC开启
 # Xephyr
-apt --no-install-recommends -y install xorg-x11-server-Xephyr
+apt --no-install-recommends -y install xserver-xephyr
 Xephyr -screen 2560x1600x16 :1
 DISPLAY=:1 xfce4-session
 
