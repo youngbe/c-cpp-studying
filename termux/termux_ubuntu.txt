@@ -1,6 +1,6 @@
-apt update
+pkg install
 apt --no-install-recommends --auto-remove --purge -y full-upgrade
-apt update
+pkg install
 apt --no-install-recommends --auto-remove --purge -y full-upgrade
 apt --no-install-recommends -y install proot wget
 
