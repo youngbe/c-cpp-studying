@@ -16,7 +16,7 @@ long double f(const long double x[], const size_t n)
     long double temp2 = cosl(2 * M_PI * x[0]);
     for (size_t i = 1; i < n; ++i) {
         temp1 += x[i] * x[i];
-        temp2 += cosl(2 * M_PI * x[i]);
+        temp2 += cosl((long double)2 * M_PI * x[i]);
     }
     return -20 * expl(sqrtl(temp1 / n) / -5) - expl(temp2 / n) + 20 + M_E;
 }

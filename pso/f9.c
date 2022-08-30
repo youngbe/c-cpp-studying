@@ -14,7 +14,7 @@ long double f(const long double x[], const size_t n)
     }
     long double ret = 0;
     for (size_t i = 0; i < n; ++i) {
-        ret += x[i] * x[i] - 10 * cosl(2 * M_PI * x[i]);
+        ret += x[i] * x[i] - 10 * cosl((long double)2 * M_PI * x[i]);
     }
     return ret + 10 * n;
 }

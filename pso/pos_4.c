@@ -1,7 +1,4 @@
-// 惯量权重线性递减法
-// 收敛到了边缘，可能原因：
-// 1. 初始化v
-// 2. W_MAX W_MIN
+//凸函数递减法
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -64,7 +61,6 @@ int main()
     size_t runs = 0;
 
     init_my_random();
-    const long double d = ((long double)W_MAX - W_MIN) / TIMES;
 
     for (size_t run_time = 0; run_time < RUNS; ++run_time) {
         // 初始化
@@ -79,14 +75,16 @@ int main()
             if (pBest_v[i] < pBest_v[gBest])
                 gBest = i;
         }
-        long double w = W_MAX;
         // 迭代
         for (size_t time = 0; time < TIMES; ++time) {
+            long double t_2 = 1 - (long double)time/TIMES;
+            t_2 *= t_2;
             // 先更新速度
             for (size_t i = 0; i < POP_SIZE; ++i) {
                 // v[i] = v[i] + c1 * r1 * (pBest[i] - x[i]) + c2 * r2 * (pBest[gBest] - x[i])
                 for (size_t i2 = 0; i2 < wei; ++i2) {
-                    v[i][i2] = w * v[i][i2] + C1 * my_random(0, 1) * (pBest[i][i2] - x[i][i2]) + C2 * my_random(0, 1) * (pBest[gBest][i2] - x[i][i2]);
+                    //printf("w=:%Lf\n", (W_MAX - (W_MAX - W_MIN) * t_2));
+                    v[i][i2] = (W_MIN + (W_MAX - W_MIN) * t_2) * v[i][i2] + C1 * my_random(0, 1) * (pBest[i][i2] - x[i][i2]) + C2 * my_random(0, 1) * (pBest[gBest][i2] - x[i][i2]);
                     // 设置速度上限为范围的10%
                     if (v[i][i2] > 0.05 * (x_max - x_min)) {
                         v[i][i2] = 0.05 * (x_max - x_min);
@@ -129,7 +127,6 @@ int main()
                         gBest = i;
                 }
             }
-            w -= d;
             /*
             printf("DEBUG: 计算了%lu次，结果:%lu,%Lf\n", time+1, gBest, pBest_v[gBest]);
             printf("DEBUG:各点位置：\n");
@@ -150,6 +147,16 @@ int main()
             }
             */
         }
+        /*
+            printf("DEBUG:各点速度：\n");
+            for (size_t i = 0; i < POP_SIZE; ++i) {
+                printf("DEBUG: %lu [ ", i);
+                for (size_t i2 = 0; i2 < wei; ++i2) {
+                    printf("%Lf, ", v[i][i2]);
+                }
+                printf("]\n");
+            }
+            */
         //printf("DEBUG: 保存result[%lu] = %Lf\n", runs,  pBest_v[gBest]);
         result[runs++] = pBest_v[gBest];
     }

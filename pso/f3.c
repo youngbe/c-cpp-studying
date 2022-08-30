@@ -15,9 +15,8 @@ long double f(const long double x[], const size_t n)
     long double ret = x[0] * x[0];
     for (size_t i = 1; i != n; ++i) {
         long double temp = x[0];
-        for (size_t i2 = 1; i2 <= i; ++i2) {
+        for (size_t i2 = 1; i2 <= i; ++i2)
             temp += x[i2];
-        }
         ret += temp * temp;
     }
     return ret;
