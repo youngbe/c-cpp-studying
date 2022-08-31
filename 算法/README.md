@@ -14,3 +14,4 @@
 1. https://leetcode.cn/problems/maximum-binary-tree/
 2. 通配符匹配
 3. 括号匹配
+4. pow快速幂：https://leetcode.cn/problems/powx-n/submissions/
