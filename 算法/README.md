@@ -1,7 +1,7 @@
 1. 并查集
 3. 原地hash算法：https://leetcode.cn/problems/first-missing-positive/
 4. RMQ问题：ST算法、线段树：https://zhuanlan.zhihu.com/p/79423299
-5. 单调栈：
+5. 单调栈：https://leetcode.cn/problems/next-greater-element-ii/
 6. 回溯法：解数独：https://leetcode.cn/problems/valid-sudoku/ https://leetcode.cn/problems/sudoku-solver/
 7. 回溯法：N皇后问题：https://leetcode.cn/problems/n-queens/
 8. 动态规划：最长上升子序列
