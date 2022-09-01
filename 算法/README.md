@@ -7,6 +7,7 @@
 7. 回溯法：N皇后问题：https://leetcode.cn/problems/n-queens/
 8. 动态规划：最长上升子序列
 9. 动态规划：最长公共子序列
+10. 动态规划：最长公共子串：https://leetcode.cn/problems/maximum-length-of-repeated-subarray/
 10. KMP算法：子串匹配：https://leetcode.cn/problems/implement-strstr/
 11. KSP算法
 12. LCA问题
