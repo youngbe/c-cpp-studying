@@ -11,9 +11,10 @@
 10. KMP算法：子串匹配：https://leetcode.cn/problems/implement-strstr/
 11. KSP算法
 12. LCA问题
+13. atoi：https://leetcode.cn/problems/string-to-integer-atoi/
+14. 快速幂pow：https://leetcode.cn/problems/powx-n/submissions/
 
 其他：
 1. https://leetcode.cn/problems/maximum-binary-tree/
 2. 通配符匹配
 3. 括号匹配
-4. pow快速幂：https://leetcode.cn/problems/powx-n/submissions/
