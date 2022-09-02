@@ -5,7 +5,7 @@
 5. 单调栈：https://leetcode.cn/problems/next-greater-element-ii/
 6. 回溯法：解数独：https://leetcode.cn/problems/sudoku-solver/
 7. 回溯法：N皇后问题：https://leetcode.cn/problems/n-queens/
-8. 动态规划：最长上升子序列（LIS）
+8. 动态规划：最长上升子序列（LIS）：https://leetcode.cn/problems/longest-increasing-subsequence/submissions/
 9. 动态规划：最长公共子序列（LCS）：https://leetcode.cn/problems/longest-common-subsequence/
 10. 动态规划：最长公共子串：https://leetcode.cn/problems/maximum-length-of-repeated-subarray/
 10. KMP算法：子串匹配：https://leetcode.cn/problems/implement-strstr/
