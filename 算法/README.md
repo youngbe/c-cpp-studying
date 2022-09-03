@@ -16,6 +16,7 @@
 16. LCA问题
 17. atoi：https://leetcode.cn/problems/string-to-integer-atoi/
 18. 快速幂pow：https://leetcode.cn/problems/powx-n/submissions/
+19. 最长回文子串：https://leetcode.cn/problems/longest-palindromic-substring/
 
 其他：
 1. https://leetcode.cn/problems/maximum-binary-tree/
