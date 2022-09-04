@@ -1,7 +1,7 @@
 1. 并查集
 2. 最小生成树MST：prim，Kruskal：一个加点，一个加边
 3. 最短路径问题：Dijkstra
-4. 最长路径问题/最小高度树：https://leetcode.cn/problems/minimum-height-trees/
+4. 树的最长路径/最小高度树：https://leetcode.cn/problems/minimum-height-trees/
 5. 寻找相同子树：https://leetcode.cn/problems/find-duplicate-subtrees/
 6. 最大匹配问题：匈牙利算法：https://www.nowcoder.com/practice/b9eae162e02f4f928eac37d7699b352e
 7. 原地hash算法：https://leetcode.cn/problems/first-missing-positive/
