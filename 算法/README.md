@@ -2,16 +2,12 @@
 1. 并查集：https://leetcode.cn/problems/number-of-provinces/
 2. 树转字符串/字符串转树：https://leetcode.cn/problems/construct-string-from-binary-tree/ https://leetcode.cn/problems/serialize-and-deserialize-binary-tree/ https://leetcode.cn/problems/find-duplicate-subtrees/
 3. 走地图：https://leetcode.cn/problems/minimum-path-sum/ https://leetcode.cn/problems/path-with-minimum-effort/ https://leetcode.cn/problems/shortest-path-in-a-grid-with-obstacles-elimination/
-4. 最大匹配问题：匈牙利算法：https://www.nowcoder.com/practice/b9eae162e02f4f928eac37d7699b352e
+4. 遍历树：https://leetcode.cn/problems/diameter-of-binary-tree/ https://leetcode.cn/problems/minimum-height-trees/
+5. 最大匹配问题：匈牙利算法：https://www.nowcoder.com/practice/b9eae162e02f4f928eac37d7699b352e
 
 ##
-1. 并查集
 2. 最小生成树MST：prim，Kruskal：一个加点，一个加边
 3. 最短路径问题：Dijkstra
-4. 树的最长路径/树的直径/最小高度树：https://leetcode.cn/problems/minimum-height-trees/
-5. 树的直径：https://leetcode.cn/problems/diameter-of-binary-tree/
-6. 寻找相同子树：https://leetcode.cn/problems/find-duplicate-subtrees/
-7. 最大匹配问题：匈牙利算法：https://www.nowcoder.com/practice/b9eae162e02f4f928eac37d7699b352e
 8. 原地hash算法：https://leetcode.cn/problems/first-missing-positive/
 9. RMQ问题：ST算法、线段树：https://zhuanlan.zhihu.com/p/79423299
 10. 单调栈：https://leetcode.cn/problems/next-greater-element-ii/
