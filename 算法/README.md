@@ -1,8 +1,9 @@
 图（树除外）：
 1. 并查集：https://leetcode.cn/problems/number-of-provinces/ https://leetcode.cn/problems/path-with-minimum-effort/
-2. 走地图：https://leetcode.cn/problems/minimum-path-sum/ https://leetcode.cn/problems/path-with-minimum-effort/ https://leetcode.cn/problems/shortest-path-in-a-grid-with-obstacles-elimination/
-3. 最大匹配问题：匈牙利算法：https://www.nowcoder.com/practice/b9eae162e02f4f928eac37d7699b352e
-4. Dijkstra算法：https://leetcode.cn/problems/path-with-minimum-effort/
+2. 最大匹配问题：匈牙利算法：https://www.nowcoder.com/practice/b9eae162e02f4f928eac37d7699b352e
+3. Dijkstra算法：https://leetcode.cn/problems/path-with-minimum-effort/
+4. dfs走图：https://leetcode.cn/problems/shortest-path-in-a-grid-with-obstacles-elimination/
+5. dp：https://leetcode.cn/problems/minimum-path-sum/
 
 树：
 1. 树转字符串/字符串转树：https://leetcode.cn/problems/construct-string-from-binary-tree/ https://leetcode.cn/problems/serialize-and-deserialize-binary-tree/ https://leetcode.cn/problems/find-duplicate-subtrees/
