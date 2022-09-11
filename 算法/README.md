@@ -8,7 +8,7 @@
 树：
 1. 树转字符串/字符串转树：https://leetcode.cn/problems/construct-string-from-binary-tree/ https://leetcode.cn/problems/serialize-and-deserialize-binary-tree/ https://leetcode.cn/problems/find-duplicate-subtrees/
 2. 树的最长路径/最小高度树：https://leetcode.cn/problems/minimum-height-trees/
-3. 遍历树：https://leetcode.cn/problems/diameter-of-binary-tree/ https://leetcode.cn/problems/minimum-height-trees/
+3. 遍历树：https://leetcode.cn/problems/diameter-of-binary-tree/ https://leetcode.cn/problems/minimum-height-trees/ https://leetcode.cn/problems/binary-tree-maximum-path-sum/
 
 ###
 2. 最小生成树MST：prim，Kruskal：一个加点，一个加边
