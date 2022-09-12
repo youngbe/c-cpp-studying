@@ -20,7 +20,7 @@
 12. 回溯法：N皇后问题：https://leetcode.cn/problems/n-queens/
 13. 动态规划：爬楼梯：https://leetcode.cn/problems/climbing-stairs/submissions/
 14. 动态规划：0-1背包问题、多重背包问题、完全背包问题
-15. 动态规划：双背包问题：https://leetcode.cn/problems/ones-and-zeroes/
+15. 动态规划：多维背包问题：https://leetcode.cn/problems/ones-and-zeroes/
 16. 动态规划：组合问题：https://leetcode.cn/problems/coin-change-2/ https://leetcode.cn/problems/combination-sum-iv/
 18. 动态规划：最长上升子序列（LIS）：https://leetcode.cn/problems/longest-increasing-subsequence/submissions/
 19. 动态规划：最长公共子序列（LCS）：https://leetcode.cn/problems/longest-common-subsequence/
