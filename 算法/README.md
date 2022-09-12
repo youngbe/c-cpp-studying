@@ -21,16 +21,18 @@
 13. 动态规划：爬楼梯：https://leetcode.cn/problems/climbing-stairs/submissions/
 14. 动态规划：0-1背包问题、多重背包问题、完全背包问题
 15. 动态规划：双背包问题
-15. 动态规划：最长上升子序列（LIS）：https://leetcode.cn/problems/longest-increasing-subsequence/submissions/
-16. 动态规划：最长公共子序列（LCS）：https://leetcode.cn/problems/longest-common-subsequence/
-17. 动态规划：最长公共子串：https://leetcode.cn/problems/maximum-length-of-repeated-subarray/
-18. 动态规划：最长的斐波那契子序列：https://leetcode.cn/problems/length-of-longest-fibonacci-subsequence/
-19. KMP算法：子串匹配：https://leetcode.cn/problems/implement-strstr/
-20. KSP算法
-21. LCA问题
-22. atoi：https://leetcode.cn/problems/string-to-integer-atoi/
-23. 快速幂pow：https://leetcode.cn/problems/powx-n/submissions/
-24. 最长回文子串：https://leetcode.cn/problems/longest-palindromic-substring/
+16. 动态规划：组合问题：https://leetcode.cn/problems/combination-sum-iv/
+17. 动态规划：组合问题2：
+18. 动态规划：最长上升子序列（LIS）：https://leetcode.cn/problems/longest-increasing-subsequence/submissions/
+19. 动态规划：最长公共子序列（LCS）：https://leetcode.cn/problems/longest-common-subsequence/
+20. 动态规划：最长公共子串：https://leetcode.cn/problems/maximum-length-of-repeated-subarray/
+21. 动态规划：最长的斐波那契子序列：https://leetcode.cn/problems/length-of-longest-fibonacci-subsequence/
+22. KMP算法：子串匹配：https://leetcode.cn/problems/implement-strstr/
+23. KSP算法
+24. LCA问题
+25. atoi：https://leetcode.cn/problems/string-to-integer-atoi/
+26. 快速幂pow：https://leetcode.cn/problems/powx-n/submissions/
+27. 最长回文子串：https://leetcode.cn/problems/longest-palindromic-substring/
 
 
 其他：
