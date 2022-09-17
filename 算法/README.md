@@ -3,7 +3,7 @@
 2. 最大匹配问题：匈牙利算法：https://www.nowcoder.com/practice/b9eae162e02f4f928eac37d7699b352e
 3. Dijkstra算法：https://leetcode.cn/problems/path-with-minimum-effort/
 4. dfs走图：https://leetcode.cn/problems/shortest-path-in-a-grid-with-obstacles-elimination/
-5. dp：https://leetcode.cn/problems/minimum-path-sum/ https://leetcode.cn/problems/cherry-pickup/
+5. dp：https://leetcode.cn/problems/minimum-path-sum/ https://leetcode.cn/problems/cherry-pickup/ https://leetcode.cn/problems/dungeon-game/
 
 树：
 1. 树转字符串/字符串转树：https://leetcode.cn/problems/construct-string-from-binary-tree/ https://leetcode.cn/problems/serialize-and-deserialize-binary-tree/ https://leetcode.cn/problems/find-duplicate-subtrees/
@@ -28,17 +28,18 @@
 15. 字符串哈希：https://leetcode.cn/problems/longest-common-subpath/
 16. KMP算法：子串匹配：https://leetcode.cn/problems/implement-strstr/
 17. 快速幂pow：https://leetcode.cn/problems/powx-n/submissions/
-18. 最小生成树MST：prim，Kruskal：一个加点，一个加边
-19. 最短路径问题：Dijkstra
+18. 报数游戏（约瑟夫环）：https://leetcode.cn/problems/find-the-winner-of-the-circular-game/
+19. 最小生成树MST：prim，Kruskal：一个加点，一个加边
+20. 最短路径问题：Dijkstra
 25. 原地hash算法：https://leetcode.cn/problems/first-missing-positive/
 26. RMQ问题：ST算法、线段树：https://zhuanlan.zhihu.com/p/79423299
 27. 单调栈：https://leetcode.cn/problems/next-greater-element-ii/
-23. KSP算法
-24. LCA问题
-25. atoi：https://leetcode.cn/problems/string-to-integer-atoi/
+24. KSP算法
+25. LCA问题
+26. atoi：https://leetcode.cn/problems/string-to-integer-atoi/
 27. 最长回文子串：https://leetcode.cn/problems/longest-palindromic-substring/
 28. 最大公约数/最小公倍数：https://www.nowcoder.com/practice/22948c2cad484e0291350abad86136c3
-29. 报数游戏（约瑟夫环）：https://leetcode.cn/problems/find-the-winner-of-the-circular-game/
+
 
 
 
