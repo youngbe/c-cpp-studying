@@ -33,6 +33,7 @@
 26. 快速幂pow：https://leetcode.cn/problems/powx-n/submissions/
 27. 最长回文子串：https://leetcode.cn/problems/longest-palindromic-substring/
 28. 最大公约数/最小公倍数：https://www.nowcoder.com/practice/22948c2cad484e0291350abad86136c3
+29. 报数游戏（约瑟夫环）
 
 
 其他：
