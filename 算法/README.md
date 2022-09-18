@@ -32,17 +32,18 @@
 16. KMP算法：子串匹配：https://leetcode.cn/problems/implement-strstr/
 17. 快速幂pow：https://leetcode.cn/problems/powx-n/submissions/
 18. 报数游戏（约瑟夫环）：https://leetcode.cn/problems/find-the-winner-of-the-circular-game/
-19. 最小生成树MST：prim，Kruskal：一个加点，一个加边
-20. 最短路径问题：Dijkstra
+19. 字典树：https://leetcode.cn/problems/sum-of-prefix-scores-of-strings/
+20. 最小生成树MST：prim，Kruskal：一个加点，一个加边
+21. 最短路径问题：Dijkstra
 25. 原地hash算法：https://leetcode.cn/problems/first-missing-positive/
 26. RMQ问题：ST算法、线段树：https://zhuanlan.zhihu.com/p/79423299
 27. 单调栈：https://leetcode.cn/problems/next-greater-element-ii/
-24. KSP算法
-25. LCA问题
-26. atoi：https://leetcode.cn/problems/string-to-integer-atoi/
-27. 最长回文子串：https://leetcode.cn/problems/longest-palindromic-substring/
-28. 最大公约数/最小公倍数：https://www.nowcoder.com/practice/22948c2cad484e0291350abad86136c3
-29. 扫描线问题：https://leetcode.cn/problems/rectangle-area-ii/
+25. KSP算法
+26. LCA问题
+27. atoi：https://leetcode.cn/problems/string-to-integer-atoi/
+28. 最长回文子串：https://leetcode.cn/problems/longest-palindromic-substring/
+29. 最大公约数/最小公倍数：https://www.nowcoder.com/practice/22948c2cad484e0291350abad86136c3
+30. 扫描线问题：https://leetcode.cn/problems/rectangle-area-ii/
 
 
 
