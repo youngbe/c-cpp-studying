@@ -13,7 +13,7 @@
 3. 遍历树：https://leetcode.cn/problems/diameter-of-binary-tree/ https://leetcode.cn/problems/minimum-height-trees/ https://leetcode.cn/problems/binary-tree-maximum-path-sum/
 4. 树的数组表示方式：https://leetcode.cn/problems/reverse-odd-levels-of-binary-tree/
 
-###
+#
 1. 动态规划：爬楼梯：https://leetcode.cn/problems/climbing-stairs/submissions/
 2. 动态规划：0-1背包问题、多重背包问题、完全背包问题
 3. 动态规划：多维背包问题：https://leetcode.cn/problems/ones-and-zeroes/
@@ -49,7 +49,6 @@
 33. KSP算法
 34. LCA问题
 35. atoi：https://leetcode.cn/problems/string-to-integer-atoi/
-36. 最长回文子串：https://leetcode.cn/problems/longest-palindromic-substring/
 
 
 
