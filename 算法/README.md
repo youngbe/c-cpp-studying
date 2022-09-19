@@ -33,21 +33,23 @@
 17. 快速幂pow：https://leetcode.cn/problems/powx-n/submissions/
 18. 报数游戏（约瑟夫环）：https://leetcode.cn/problems/find-the-winner-of-the-circular-game/
 19. 字典树：https://leetcode.cn/problems/sum-of-prefix-scores-of-strings/
-20. 回文子串：https://leetcode.cn/problems/palindromic-substrings/
-21. 回文子串：https://leetcode.cn/problems/longest-palindromic-substring/
-22. 回文子串：https://leetcode.cn/problems/palindrome-partitioning/
-23. 回文子串：https://leetcode.cn/problems/palindrome-partitioning-ii/
-24. 最小生成树MST：prim，Kruskal：一个加点，一个加边
-25. 最短路径问题：Dijkstra
-26. 原地hash算法：https://leetcode.cn/problems/first-missing-positive/
-27. RMQ问题：ST算法、线段树：https://zhuanlan.zhihu.com/p/79423299
-28. 单调栈：https://leetcode.cn/problems/next-greater-element-ii/
-29. KSP算法
-30. LCA问题
-31. atoi：https://leetcode.cn/problems/string-to-integer-atoi/
-32. 最长回文子串：https://leetcode.cn/problems/longest-palindromic-substring/
-33. 最大公约数/最小公倍数：https://www.nowcoder.com/practice/22948c2cad484e0291350abad86136c3
-34. 扫描线问题：https://leetcode.cn/problems/rectangle-area-ii/
+35. 最大公约数/最小公倍数：https://www.nowcoder.com/practice/22948c2cad484e0291350abad86136c3
+21. 回文子串：https://leetcode.cn/problems/palindromic-substrings/
+22. 回文子串：https://leetcode.cn/problems/longest-palindromic-substring/
+23. 回文子串：https://leetcode.cn/problems/palindrome-partitioning/
+24. 回文子串：https://leetcode.cn/problems/palindrome-partitioning-ii/
+25. 单调栈：https://leetcode.cn/problems/largest-rectangle-in-histogram/
+26. 单调栈：https://leetcode.cn/problems/maximal-rectangle/
+36. 扫描线问题：https://leetcode.cn/problems/rectangle-area-ii/
+28. 最小生成树MST：prim，Kruskal：一个加点，一个加边
+29. 最短路径问题：Dijkstra
+30. 原地hash算法：https://leetcode.cn/problems/first-missing-positive/
+31. RMQ问题：ST算法、线段树：https://zhuanlan.zhihu.com/p/79423299
+32. 单调栈：https://leetcode.cn/problems/next-greater-element-ii/
+33. KSP算法
+34. LCA问题
+35. atoi：https://leetcode.cn/problems/string-to-integer-atoi/
+36. 最长回文子串：https://leetcode.cn/problems/longest-palindromic-substring/
 
 
 
