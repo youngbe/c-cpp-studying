@@ -33,6 +33,9 @@
 17. 快速幂pow：https://leetcode.cn/problems/powx-n/submissions/
 18. 报数游戏（约瑟夫环）：https://leetcode.cn/problems/find-the-winner-of-the-circular-game/
 19. 字典树：https://leetcode.cn/problems/sum-of-prefix-scores-of-strings/
+20. 回文子串：https://leetcode.cn/problems/palindromic-substrings/
+20. 回文子串：https://leetcode.cn/problems/palindrome-partitioning/
+21. 回文子串：https://leetcode.cn/problems/palindrome-partitioning-ii/
 20. 最小生成树MST：prim，Kruskal：一个加点，一个加边
 21. 最短路径问题：Dijkstra
 25. 原地hash算法：https://leetcode.cn/problems/first-missing-positive/
