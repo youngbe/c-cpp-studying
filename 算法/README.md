@@ -5,7 +5,7 @@
 4. bfs走图：https://leetcode.cn/problems/shortest-path-in-a-grid-with-obstacles-elimination/ https://leetcode.cn/problems/pacific-atlantic-water-flow/ https://leetcode.cn/problems/word-ladder-ii/submissions/
 5. dfs走图：https://leetcode.cn/problems/making-a-large-island/
 5. dp：https://leetcode.cn/problems/minimum-path-sum/ https://leetcode.cn/problems/cherry-pickup/ https://leetcode.cn/problems/dungeon-game/
-6. 环基内/外向树：https://leetcode.cn/problems/maximum-employees-to-be-invited-to-a-meeting/ https://leetcode.cn/problems/longest-cycle-in-a-graph/submissions/ https://leetcode.cn/problems/redundant-connection-ii/
+6. 环基内/外向树：https://leetcode.cn/problems/maximum-employees-to-be-invited-to-a-meeting/ https://leetcode.cn/problems/longest-cycle-in-a-graph/ https://leetcode.cn/problems/redundant-connection-ii/
 
 树：
 1. 树转字符串/字符串转树：https://leetcode.cn/problems/construct-string-from-binary-tree/ https://leetcode.cn/problems/serialize-and-deserialize-binary-tree/ https://leetcode.cn/problems/find-duplicate-subtrees/
