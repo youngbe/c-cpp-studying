@@ -38,3 +38,13 @@ set smartindent
 set cindent
 set cinoptions+=g0
 EOF
+
+cat >> ~/.inputrc << EOF
+"\e[5~": history-search-backward
+"\e[6~": history-search-forward
+EOF
+
+cat >> ~/.bashrc << EOF
+HISTSIZE=-1
+HISTFILESIZE=-1
+EOF
