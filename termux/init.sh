@@ -1,7 +1,7 @@
 #!/bin/bash
 #apt --no-install-recommends install open-vm-tools-desktop
 #apt --no-install-recommends install openjdk-18-jdk-headless python3-minimal python3-pip mysql-server
-apt --no-install-recommends install vim gedit gcc g++ git openssh-client make gdb git tree
+apt --no-install-recommends install vim gcc g++ git openssh-client make gdb git tree gedit
 
 
 #dnf --setopt=install_weak_deps=False install open-vm-tools-desktop
@@ -42,6 +42,8 @@ EOF
 cat >> ~/.inputrc << EOF
 "\e[5~": history-search-backward
 "\e[6~": history-search-forward
+"\e[H": beginning-of-line
+"\e[F": end-of-line
 EOF
 
 cat >> ~/.bashrc << EOF
