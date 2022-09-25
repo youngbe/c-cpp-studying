@@ -21,8 +21,10 @@ static inline int _rmdir_p(char *const path, const size_t path_len, const size_t
             continue;
 
         const size_t ld = strlen(entry->d_name);
-        if (path_len + ld > path_len_max)
+        if (path_len + ld > path_len_max) {
+            ret = -1;
             goto label_error1;
+        }
         strcat(&path[path_len], entry->d_name);
         struct stat _stat;
         ret = lstat(path, &_stat);
@@ -31,8 +33,10 @@ static inline int _rmdir_p(char *const path, const size_t path_len, const size_t
         if (S_ISDIR(_stat.st_mode)) {
             size_t lnew = path_len + ld;
             if (path[lnew - 1] != '/') {
-                if (lnew == path_len_max)
+                if (lnew == path_len_max) {
+                    ret = -1;
                     goto label_error2;
+                }
                 path[lnew++] = '/';
                 path[lnew] = '\0';
             }
