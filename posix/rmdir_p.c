@@ -75,23 +75,15 @@ int rmdir_p(const char *const path)
         return -1;
 
     size_t lp = strlen(path);
-    if (lp > PATH_MAX)
+    if (lp > PATH_MAX || lp == 0)
         return -1;
     char _path[PATH_MAX];
-    if (lp == 0) {
-        _path[0] = '.';
-        _path[1] = '/';
-        _path[2] = '\0';
-        lp = 2;
-    }
-    else {
-        strcpy(_path, path);
-        if (_path[lp - 1] != '/') {
-            if (lp == PATH_MAX)
-                return -1;
-            _path[lp++] = '/';
-            _path[lp] = '\0';
-        }
+    strcpy(_path, path);
+    if (_path[lp - 1] != '/') {
+        if (lp == PATH_MAX)
+            return -1;
+        _path[lp++] = '/';
+        _path[lp] = '\0';
     }
     return _rmdir_p(_path, lp, PATH_MAX);
 }
