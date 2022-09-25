@@ -26,11 +26,11 @@ static inline int _rmdir_p(char *const path, const size_t path_len, const size_t
             goto label_error1;
         }
         strcat(&path[path_len], entry->d_name);
-        struct stat _stat;
-        ret = lstat(path, &_stat);
+        struct stat statbuf;
+        ret = lstat(path, &statbuf);
         if (ret != 0)
             goto label_error2;
-        if (S_ISDIR(_stat.st_mode)) {
+        if (S_ISDIR(statbuf.st_mode)) {
             size_t lnew = path_len + ld;
             if (path[lnew - 1] != '/') {
                 if (lnew == path_len_max) {
@@ -64,14 +64,14 @@ label_error1:
 
 int rmdir_p(const char *const path)
 {
-    struct stat _stat;
+    struct stat statbuf;
     int ret;
 
-    ret = lstat(path, &_stat);
+    ret = lstat(path, &statbuf);
     if (ret != 0)
         return ret;
 
-    if (!S_ISDIR(_stat.st_mode))
+    if (!S_ISDIR(statbuf.st_mode))
         return -1;
 
     size_t lp = strlen(path);
@@ -110,12 +110,12 @@ static inline int _clear_dir_fd(const int dir_fd)
         if (strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0)
             continue;
 
-        struct stat _stat;
-        ret = fstatat(dir_fd, entry->d_name, &_stat, AT_SYMLINK_NOFOLLOW);
+        struct stat statbuf;
+        ret = fstatat(dir_fd, entry->d_name, &statbuf, AT_SYMLINK_NOFOLLOW);
         if (ret == -1) {
             return -1;
         }
-        if (S_ISDIR(_stat.mode)) {
+        if (S_ISDIR(statbuf.mode)) {
             const int new_dir_fd = openat(dir_fd, entry->d_name, );
             _clear_dir_fd(new_dir_fd);
             rmdirat(dir_fd, entry->d_name)
@@ -139,12 +139,12 @@ static inline int _clear_dir(DIR *const dir)
         if (strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0)
             continue;
 
-        struct stat _stat;
-        ret = fstatat(dir_fd, entry->d_name, &_stat, AT_SYMLINK_NOFOLLOW);
+        struct stat statbuf;
+        ret = fstatat(dir_fd, entry->d_name, &statbuf, AT_SYMLINK_NOFOLLOW);
         if (ret == -1) {
             return -1;
         }
-        if (S_ISDIR(_stat.mode)) {
+        if (S_ISDIR(statbuf.mode)) {
             const int new_dir_fd = openat(dir_fd, entry->name);
 
         }
@@ -177,13 +177,13 @@ static inline int _clear_dir(DIR *const dir)
     while ((entry = readdir(dir)) != NULL) {
         if (strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0)
             continue;
-        struct stat _stat;
-        ret = fstatat(fd, entry->d_name, &_stat, AT_SYMLINK_NOFOLLOW);
+        struct stat statbuf;
+        ret = fstatat(fd, entry->d_name, &statbuf, AT_SYMLINK_NOFOLLOW);
         if (ret == -1) {
             goto label_error1;
         }
 
-        if (_stat)
+        if (statbuf)
     }
 
     closedir(dir);
@@ -198,14 +198,14 @@ label_error0:
 int rmdir_p(const char *const path)
 {
     int ret;
-    struct stat _stat;
+    struct stat statbuf;
 
-    ret = lstat(path, &_stat);
+    ret = lstat(path, &statbuf);
     if (ret != 0) {
         goto label_error0;
     }
 
-    if (!S_ISDIR(_stat.mode)) {
+    if (!S_ISDIR(statbuf.mode)) {
         ret = -1;
         goto label_error0;
     }
