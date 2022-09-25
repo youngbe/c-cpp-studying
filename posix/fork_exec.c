@@ -15,8 +15,10 @@ int main()
         int ret = execve("/home/ig/test", argv, &x);
         if (ret != 0)
             fprintf(stderr, "exec failed!\n");
-        else
+        else {
             fprintf(stderr, "exec return!\n");
+            ret = -1;
+        }
         return ret;
     }
     int statval;
