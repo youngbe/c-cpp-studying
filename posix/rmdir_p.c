@@ -77,7 +77,7 @@ int rmdir_p(const char *const path)
     size_t lp = strlen(path);
     if (lp > PATH_MAX || lp == 0)
         return -1;
-    char _path[PATH_MAX];
+    char _path[PATH_MAX + 1];
     strcpy(_path, path);
     if (_path[lp - 1] != '/') {
         if (lp == PATH_MAX)
