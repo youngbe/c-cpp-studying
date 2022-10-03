@@ -7,7 +7,7 @@
 
 #include <string.h>
 
-
+// 保证该目录一定存在（lstat读取该路径为目录），且path的结尾为'/'，path_len == strlen(path)
 static inline int _rmdir_p(char *const path, const size_t path_len, const size_t path_len_max)
 {
     DIR *const dir = opendir(path);
@@ -25,7 +25,7 @@ static inline int _rmdir_p(char *const path, const size_t path_len, const size_t
             ret = -1;
             goto label_error1;
         }
-        strcat(&path[path_len], entry->d_name);
+        strcpy(&path[path_len], entry->d_name);
         struct stat statbuf;
         ret = lstat(path, &statbuf);
         if (ret != 0)
