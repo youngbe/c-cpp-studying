@@ -6,14 +6,11 @@
 
 int cp(const char *const path1, const char *const path2)
 {
-    int ret;
-
     FILE *const fp1 = fopen(path1, "rb");
-    if (fp1 == NULL) {
-        ret = -1;
-        goto label_error0;
-    }
+    if (fp1 == NULL)
+        return -1;
 
+    int ret;
     FILE *const fp2 = fopen(path2, "wb");
     if (fp2 == NULL) {
         ret = -1;
@@ -58,7 +55,6 @@ label_error2:
     fclose(fp2);
 label_error1:
     fclose(fp1);
-label_error0:
     return ret;
 }
 
