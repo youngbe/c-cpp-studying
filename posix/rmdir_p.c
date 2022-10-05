@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 #include <dirent.h>
 #include <linux/limits.h>
 #include <sys/stat.h>
@@ -87,6 +85,8 @@ int rmdir_p(const char *const path)
     }
     return _rmdir_p(_path, lp, PATH_MAX);
 }
+
+#include <stdio.h>
 
 int main(int argc, char *argv[])
 {
