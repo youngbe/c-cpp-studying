@@ -7,13 +7,13 @@
 #define fork_execlp_wait(file, ...) \
 ({ \
     int _ret; \
-    pid_t pid = fork(); \
-    if (pid == -1) { \
+    pid_t _pid = fork(); \
+    if (_pid == -1) { \
         fputs("error: fork failed!\n", stderr); \
         _ret = -1; \
         goto __label_return; \
     } \
-    if (pid == 0) { \
+    if (_pid == 0) { \
         _ret = execlp(file, __VA_ARGS__); \
         if (_ret == 0) { \
             fputs("error: execlp return 0!\n", stderr); \
