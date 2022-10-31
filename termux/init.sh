@@ -1,7 +1,8 @@
 cat > /bin/gcc-me << EOF
 #!/bin/bash
-gcc -fstack-reuse=all -freg-struct-return -fdwarf2-cfi-asm -fplt -fipa-pta -fdevirtualize-at-ltrans \\
-    -fwrapv -fwrapv-pointer -fno-trapv -ffast-math -ffp-contract=fast \\
+gcc -fstack-reuse=all -freg-struct-return -fipa-pta -fdevirtualize-at-ltrans \\
+    -fwrapv -fwrapv-pointer -fno-trapv \\
+    -fdwarf2-cfi-asm -fplt -ffast-math -ffp-contract=fast -fomit-frame-pointer -fno-conserve-stack \\
     -fno-exceptions -fno-asynchronous-unwind-tables -fno-unwind-tables \\
     -fstack-check=no -fno-stack-clash-protection -fno-stack-protector -fno-split-stack -fcf-protection=none -fno-sanitize=all -fno-instrument-functions \\
     -std=c2x -g0 -Ofast -Wall -Wextra -pedantic "\$@"
@@ -17,7 +18,7 @@ EOF
 
 chmod +x /bin/gcc-me /bin/g++-me
 
-cat >> /usr/share/vim/vim82/defaults.vim <<EOF
+cat >> /usr/share/vim/vim90/defaults.vim <<EOF
 
 set mouse-=a
 set expandtab
