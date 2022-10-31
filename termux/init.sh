@@ -1,8 +1,9 @@
 cat > /bin/gcc-me << EOF
 #!/bin/bash
-gcc -fstack-reuse=all -freg-struct-return -fipa-pta -fdevirtualize-at-ltrans \\
+gcc \\
     -fwrapv -fwrapv-pointer -fno-trapv \\
-    -fdwarf2-cfi-asm -fplt -ffast-math -ffp-contract=fast -fomit-frame-pointer -fno-conserve-stack \\
+    -fdwarf2-cfi-asm -fplt -fno-conserve-stack -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -foptimize-sibling-calls -ffast-math -ffp-contract=fast -fallow-store-data-races \\
+    -fstack-reuse=all -freg-struct-return -fipa-pta -fdevirtualize-at-ltrans \\
     -fno-exceptions -fno-asynchronous-unwind-tables -fno-unwind-tables \\
     -fstack-check=no -fno-stack-clash-protection -fno-stack-protector -fno-split-stack -fcf-protection=none -fno-sanitize=all -fno-instrument-functions \\
     -std=c2x -g0 -Ofast -Wall -Wextra -pedantic "\$@"
