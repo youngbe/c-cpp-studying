@@ -3,7 +3,7 @@ cat > /bin/gcc-me << EOF
 gcc \\
     -fwrapv -fwrapv-pointer -fno-trapv \\
     -fdwarf2-cfi-asm -fplt -fno-conserve-stack -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -foptimize-sibling-calls -ffast-math -ffp-contract=fast -fallow-store-data-races \\
-    -fstack-reuse=all -freg-struct-return -fipa-pta -fdevirtualize-at-ltrans \\
+    -fstack-reuse=all -freg-struct-return -fipa-pta -fdevirtualize-at-ltrans -fmerge-all-constants \\
     -fno-exceptions -fno-asynchronous-unwind-tables -fno-unwind-tables \\
     -fstack-check=no -fno-stack-clash-protection -fno-stack-protector -fno-split-stack -fcf-protection=none -fno-sanitize=all -fno-instrument-functions \\
     -std=c2x -g0 -Ofast -Wall -Wextra -pedantic "\$@"
