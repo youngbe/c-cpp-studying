@@ -6,7 +6,7 @@ gcc \\
     -fstack-reuse=all -freg-struct-return -fipa-pta -fdevirtualize-at-ltrans -fmerge-all-constants -funroll-all-loops -floop-parallelize-all -floop-nest-optimize \\
     -fno-exceptions -fno-asynchronous-unwind-tables -fno-unwind-tables \\
     -fstack-check=no -fno-stack-clash-protection -fno-stack-protector -fno-split-stack -fcf-protection=none -fno-sanitize=all -fno-instrument-functions \\
-    -std=c2x -g0 -Ofast -Wall -Wextra "\$@"
+    -std=gnu2x -g0 -Ofast -Wall -Wextra "\$@"
 EOF
 
 cat > /bin/g++-me << EOF
@@ -17,7 +17,7 @@ g++ \\
     -fstack-reuse=all -freg-struct-return -fipa-pta -fdevirtualize-at-ltrans -fmerge-all-constants -funroll-all-loops -floop-parallelize-all -floop-nest-optimize \\
     -fno-rtti \\
     -fstack-check=no -fno-stack-clash-protection -fno-stack-protector -fno-split-stack -fcf-protection=none -fno-sanitize=all -fno-instrument-functions -fvtable-verify=none -fno-threadsafe-statics \\
-    -std=c++23 -g0 -Ofast -Wall -Wextra -pedantic "\$@"
+    -std=gnu++23 -g0 -Ofast -Wall -Wextra "\$@"
 EOF
 
 chmod +x /bin/gcc-me /bin/g++-me
