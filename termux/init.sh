@@ -11,9 +11,12 @@ EOF
 
 cat > /bin/g++-me << EOF
 #!/bin/bash
-g++ -fstack-reuse=all -freg-struct-return -fdwarf2-cfi-asm -fplt -fipa-pta -fdevirtualize-at-ltrans \\
-    -fwrapv -fwrapv-pointer -fno-trapv -fno-rtti -ffast-math -ffp-contract=fast -fno-threadsafe-statics \\
-    -fstack-check=no -fno-stack-clash-protection -fno-stack-protector -fno-split-stack -fcf-protection=none -fno-sanitize=all -fno-instrument-functions -fvtable-verify=none \\
+g++ \\
+    -fwrapv -fwrapv-pointer -fno-trapv \\
+    -fdwarf2-cfi-asm -fplt -fno-conserve-stack -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -ffinite-loops -foptimize-sibling-calls -ffast-math -ffp-contract=fast -fallow-store-data-races \\
+    -fstack-reuse=all -freg-struct-return -fipa-pta -fdevirtualize-at-ltrans -fmerge-all-constants -funroll-all-loops -floop-parallelize-all -floop-nest-optimize \\
+    -fno-rtti \\
+    -fstack-check=no -fno-stack-clash-protection -fno-stack-protector -fno-split-stack -fcf-protection=none -fno-sanitize=all -fno-instrument-functions -fvtable-verify=none -fno-threadsafe-statics \\
     -std=c++23 -g0 -Ofast -Wall -Wextra -pedantic "\$@"
 EOF
 
