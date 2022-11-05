@@ -3,7 +3,7 @@ cat > /bin/gcc-me << EOF
 gcc \\
     -fwrapv -fwrapv-pointer -fno-trapv \\
     -fdwarf2-cfi-asm -fplt -fno-conserve-stack -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -ffinite-loops -foptimize-sibling-calls -ffast-math -ffp-contract=fast -fallow-store-data-races \\
-    -fstack-reuse=all -freg-struct-return -fipa-pta -fdevirtualize-at-ltrans -fmerge-all-constants -funroll-all-loops -floop-parallelize-all -floop-nest-optimize \\
+    -fstack-reuse=all -freg-struct-return -fipa-pta -fdevirtualize-at-ltrans -fmerge-all-constants -funroll-all-loops -floop-nest-optimize \\
     -fno-exceptions -fno-asynchronous-unwind-tables -fno-unwind-tables \\
     -fstack-check=no -fno-stack-clash-protection -fno-stack-protector -fno-split-stack -fcf-protection=none -fno-sanitize=all -fno-instrument-functions \\
     -std=gnu2x -D_GNU_SOURCE -g0 -Ofast -Wall -Wextra "\$@"
@@ -14,7 +14,7 @@ cat > /bin/g++-me << EOF
 g++ \\
     -fwrapv -fwrapv-pointer -fno-trapv \\
     -fdwarf2-cfi-asm -fplt -fno-conserve-stack -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -ffinite-loops -foptimize-sibling-calls -ffast-math -ffp-contract=fast -fallow-store-data-races \\
-    -fstack-reuse=all -freg-struct-return -fipa-pta -fdevirtualize-at-ltrans -fmerge-all-constants -funroll-all-loops -floop-parallelize-all -floop-nest-optimize \\
+    -fstack-reuse=all -freg-struct-return -fipa-pta -fdevirtualize-at-ltrans -fmerge-all-constants -funroll-all-loops -floop-nest-optimize \\
     -fno-rtti \\
     -fstack-check=no -fno-stack-clash-protection -fno-stack-protector -fno-split-stack -fcf-protection=none -fno-sanitize=all -fno-instrument-functions -fvtable-verify=none -fno-threadsafe-statics \\
     -std=gnu++23 -D_GNU_SOURCE -g0 -Ofast -Wall -Wextra "\$@"
