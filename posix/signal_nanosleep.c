@@ -17,7 +17,7 @@ int main()
     // ctrl + z
     signal(SIGTSTP, sighandler);
     // ctrl + c
-    //signal(SIGINT, sighandler);
+    signal(SIGINT, sighandler);
     printf("1111\n");
     struct timespec ts;
     ts.tv_sec = 1;
