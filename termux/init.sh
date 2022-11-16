@@ -17,7 +17,7 @@ g++ \\
     -fstack-reuse=all -freg-struct-return -fipa-pta -fdevirtualize-at-ltrans -fmerge-all-constants -funroll-all-loops -floop-nest-optimize \\
     -fno-rtti \\
     -fstack-check=no -fno-stack-clash-protection -fno-stack-protector -fno-split-stack -fcf-protection=none -fno-sanitize=all -fno-instrument-functions -fvtable-verify=none -fno-threadsafe-statics \\
-    -std=gnu++23 -D_GNU_SOURCE -g0 -Ofast -Wall -Wextra -Wstrict-prototypes "\$@"
+    -std=gnu++23 -D_GNU_SOURCE -g0 -Ofast -Wall -Wextra "\$@"
 EOF
 
 chmod +x /bin/gcc-me /bin/g++-me
