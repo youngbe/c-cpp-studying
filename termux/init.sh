@@ -5,6 +5,7 @@
 # -fstrict-volatile-bitfields ：很有意思
 # -frecord-gcc-switches
 # -finhibit-size-directive
+# -ftree-vectorize ：本身没作用，显式打开相当于打开 -ftree-loop-vectorize -ftree-slp-vectorize，显示关闭相当于关闭 那俩；更多地使用浮点寄存器，是-O2到-O3负优化的罪魁祸首
 
 cat > /bin/gcc-me << EOF
 #!/bin/bash
