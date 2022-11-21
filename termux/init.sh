@@ -1,13 +1,14 @@
-# -floop-nest-optimize ：此选项已经存在多年，仍未启用
+# -floop-nest-optimize ：此选项已经存在多年，但仍未启用
 # -fsection-anchors ： x86 不支持
 # -mskip-rax-setup ：只支持x86 32位 -mgeneral-regs-only
-# -fstd-args : 基本都是默认打开
+# -funroll-completely-grow-size ：目前没有发现作用
 
 cat > /bin/gcc-me << EOF
 #!/bin/bash
 gcc \\
     -fwrapv -fwrapv-pointer -fno-trapv \\
-    -fdwarf2-cfi-asm -fplt -fjump-tables -ftrivial-auto-var-init=uninitialized -fno-conserve-stack -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -ffinite-loops -foptimize-sibling-calls -ffast-math -ffp-contract=fast -fallow-store-data-races \\
+    -fdwarf2-cfi-asm -fplt -fjump-tables -ftrivial-auto-var-init=uninitialized -fstdarg-opt -fno-conserve-stack \\
+    -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -ffinite-loops -foptimize-sibling-calls -ffast-math -ffp-contract=fast -fallow-store-data-races \\
     -fstack-reuse=all -freg-struct-return -fipa-pta -fdevirtualize-at-ltrans -fmerge-all-constants -funroll-all-loops \\
     -fno-exceptions -fno-asynchronous-unwind-tables -fno-unwind-tables \\
     -fstack-check=no -fno-stack-clash-protection -fno-stack-protector -fno-split-stack -fcf-protection=none -fno-sanitize=all -fno-instrument-functions \\
@@ -18,7 +19,8 @@ cat > /bin/g++-me << EOF
 #!/bin/bash
 g++ \\
     -fwrapv -fwrapv-pointer -fno-trapv \\
-    -fdwarf2-cfi-asm -fplt -fjump-tables -ftrivial-auto-var-init=uninitialized -fno-conserve-stack -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -ffinite-loops -foptimize-sibling-calls -ffast-math -ffp-contract=fast -fallow-store-data-races \\
+    -fdwarf2-cfi-asm -fplt -fjump-tables -ftrivial-auto-var-init=uninitialized -fstdarg-opt -fno-conserve-stack \\
+    -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -ffinite-loops -foptimize-sibling-calls -ffast-math -ffp-contract=fast -fallow-store-data-races \\
     -fstack-reuse=all -freg-struct-return -fipa-pta -fdevirtualize-at-ltrans -fmerge-all-constants -funroll-all-loops \\
     -fno-rtti \\
     -fstack-check=no -fno-stack-clash-protection -fno-stack-protector -fno-split-stack -fcf-protection=none -fno-sanitize=all -fno-instrument-functions -fvtable-verify=none -fno-threadsafe-statics \\
