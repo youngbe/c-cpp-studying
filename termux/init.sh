@@ -2,12 +2,13 @@
 # -fsection-anchors ： x86 不支持
 # -mskip-rax-setup ：只支持x86 32位 -mgeneral-regs-only
 # -funroll-completely-grow-size ：目前没有发现作用
+# -fstrict-volatile-bitfields ：很有意思
 
 cat > /bin/gcc-me << EOF
 #!/bin/bash
 gcc \\
     -fwrapv -fwrapv-pointer -fno-trapv \\
-    -fdwarf2-cfi-asm -fplt -fstack-reuse=all -fjump-tables -ftrivial-auto-var-init=uninitialized -fstdarg-opt -fno-conserve-stack -fzero-call-used-regs=skip \\
+    -fdwarf2-cfi-asm -fplt -fstack-reuse=all -fjump-tables -fbit-tests -ftrivial-auto-var-init=uninitialized -fstdarg-opt -fno-conserve-stack -fzero-call-used-regs=skip \\
     -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -ffinite-loops -foptimize-sibling-calls -ffast-math -ffp-contract=fast -fallow-store-data-races \\
     -freg-struct-return -fipa-pta -fdevirtualize-at-ltrans -fmerge-all-constants -funroll-all-loops \\
     -fno-exceptions -fno-asynchronous-unwind-tables -fno-unwind-tables \\
@@ -19,7 +20,7 @@ cat > /bin/g++-me << EOF
 #!/bin/bash
 g++ \\
     -fwrapv -fwrapv-pointer -fno-trapv \\
-    -fdwarf2-cfi-asm -fplt -fstack-reuse=all -fjump-tables -ftrivial-auto-var-init=uninitialized -fstdarg-opt -fno-conserve-stack -fzero-call-used-regs=skip \\
+    -fdwarf2-cfi-asm -fplt -fstack-reuse=all -fjump-tables -fbit-tests -ftrivial-auto-var-init=uninitialized -fstdarg-opt -fno-conserve-stack -fzero-call-used-regs=skip \\
     -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -ffinite-loops -foptimize-sibling-calls -ffast-math -ffp-contract=fast -fallow-store-data-races \\
     -freg-struct-return -fipa-pta -fdevirtualize-at-ltrans -fmerge-all-constants -funroll-all-loops \\
     -fno-rtti \\
