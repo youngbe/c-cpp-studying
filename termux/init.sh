@@ -11,9 +11,9 @@ cat > /bin/gcc-me << EOF
 #!/bin/bash
 gcc \\
     -fwrapv -fwrapv-pointer -fno-trapv \\
-    -fdwarf2-cfi-asm -fplt -fstack-reuse=all -fjump-tables -fbit-tests -ftrivial-auto-var-init=uninitialized -fstdarg-opt -fno-conserve-stack -fzero-call-used-regs=skip \\
-    -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -ffinite-loops -foptimize-sibling-calls -ftree-loop-vectorize -ftree-slp-vectorize -ffast-math -ffp-contract=fast -fallow-store-data-races \\
-    -fno-pcc-struct-return -freg-struct-return -fipa-pta -fdevirtualize-at-ltrans -fmerge-all-constants -funroll-all-loops \\
+    -fdwarf2-cfi-asm -fplt -fstack-reuse=all -fno-float-store -fjump-tables -fbit-tests -ftrivial-auto-var-init=uninitialized -fstdarg-opt -fno-conserve-stack -fzero-call-used-regs=skip \\
+    -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -ffinite-loops -foptimize-sibling-calls -ftree-loop-vectorize -ftree-slp-vectorize -ffast-math -ffp-contract=fast -fexcess-precision=fast -fno-signed-zeros -fallow-store-data-races \\
+    -fno-pcc-struct-return -freg-struct-return -fipa-pta -fdevirtualize-at-ltrans -fno-trapping-math -fmerge-all-constants -funroll-all-loops \\
     -fno-exceptions -fno-asynchronous-unwind-tables -fno-unwind-tables \\
     -fstack-check=no -fno-stack-clash-protection -fno-stack-protector -fno-split-stack -fcf-protection=none -fno-sanitize=all -fno-instrument-functions \\
     -std=gnu2x -D_GNU_SOURCE -g0 -Ofast -Wall -Wextra -Wstrict-prototypes "\$@"
@@ -23,9 +23,9 @@ cat > /bin/g++-me << EOF
 #!/bin/bash
 g++ \\
     -fwrapv -fwrapv-pointer -fno-trapv \\
-    -fdwarf2-cfi-asm -fplt -fstack-reuse=all -fjump-tables -fbit-tests -ftrivial-auto-var-init=uninitialized -fstdarg-opt -fno-conserve-stack -fzero-call-used-regs=skip \\
-    -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -ffinite-loops -foptimize-sibling-calls -ftree-loop-vectorize -ftree-slp-vectorize -ffast-math -ffp-contract=fast -fallow-store-data-races \\
-    -fno-pcc-struct-return -freg-struct-return -fipa-pta -fdevirtualize-at-ltrans -fmerge-all-constants -funroll-all-loops \\
+    -fdwarf2-cfi-asm -fplt -fstack-reuse=all -fno-float-store -fjump-tables -fbit-tests -ftrivial-auto-var-init=uninitialized -fstdarg-opt -fno-conserve-stack -fzero-call-used-regs=skip \\
+    -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -ffinite-loops -foptimize-sibling-calls -ftree-loop-vectorize -ftree-slp-vectorize -ffast-math -ffp-contract=fast -fexcess-precision=fast -fno-signed-zeros -fallow-store-data-races \\
+    -fno-pcc-struct-return -freg-struct-return -fipa-pta -fdevirtualize-at-ltrans -fno-trapping-math -fmerge-all-constants -funroll-all-loops \\
     -fno-rtti \\
     -fstack-check=no -fno-stack-clash-protection -fno-stack-protector -fno-split-stack -fcf-protection=none -fno-sanitize=all -fno-instrument-functions -fvtable-verify=none -fno-threadsafe-statics \\
     -std=gnu++23 -D_GNU_SOURCE -g0 -Ofast -Wall -Wextra "\$@"
