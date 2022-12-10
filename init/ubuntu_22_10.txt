@@ -1,0 +1,14 @@
+sudo apt purge --auto-remove snapd gvfs "gvfs-*" "update-notifier*" "ubuntu-release-upgrader*" gdisk fdisk udisks2 gnome-disk-utility unattended-upgrades gjs evolution-data-server packagekit cups ^cups- foomatic-filters tracker ^tracker- ^printer xorg xserver-xorg gnome-user-docs ubuntu-docs yelp python3-distro python3-apt python3-aptdaemon python3-apport apport ^distro-info openssl ^openssh
+
+#sudo apt purge --auto-remove snapd gvfs-* colord ayatana-indicator-application gnome-shell kerneloops xcape avahi-daemon gnome-keyring openssh-client gpg-agent cups-browsed packagekit modemmanager unattended-upgrades cups-daemon rtkit udisks2 irqbalance rsyslog networkd-dispatcher acpid python3-software-properties cups libjavascriptcoregtk-4.0-18
+#可选
+#xfce4-screensaver xfce4-power-manager upower pipewire pipewire-media-session pipewire-bin accountsservice
+
+# gvfs：u盘自动挂载
+# nautilus：文件管理器
+# gnome-control-center：设置
+sudo apt --no-install-recommends install at-spi2-core gvfs nautilus gnome-control-center
+sudo apt --no-install-recommends install open-vm-tools-desktop
+
+sudo vim /etc/fstab
+删除swap
