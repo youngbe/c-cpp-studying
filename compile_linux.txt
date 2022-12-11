@@ -12,5 +12,7 @@ cp temp/boot/config-6.0.9-060009-generic .config
 # 安装依赖编译
 apt --no-install-recommends install gcc make libncurses-dev flex bison libelf-dev libssl-dev
 make menoconfig
+# 关闭FTRACE(如果要使用 -fomit-frame-pointer)
+# 优化选项删除 -fstrict-aliasing -fmerge-all-constants
 make -j8
 make install
