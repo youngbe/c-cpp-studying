@@ -14,7 +14,7 @@ vm.dirty_writeback_centisecs = 60000
 
 
 # mount
-ext4: async,noatime,nobarrier
+ext4: async,noatime,barrier=0
 f2fs: async,noatime,nobarrier,fsync_mode=nobarrier,noquota,disable_roll_forward
 
 zfs:
