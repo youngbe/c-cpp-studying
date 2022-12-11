@@ -10,7 +10,7 @@ dpkg -X linux-modules-6.0.9-060009-generic_6.0.9-060009.202211161102_amd64.deb t
 cp temp/boot/config-6.0.9-060009-generic .config
 
 # 安装依赖编译
-apt --no-install-recommends install gcc libc6-dev make libncurses-dev flex bison
+apt --no-install-recommends install gcc make libncurses-dev flex bison libelf-dev libssl-dev
 make menoconfig
 make -j8
 make install
