@@ -16,4 +16,4 @@ make menoconfig
 make -j8
 make install
 
-mv arch/boot/out/bzImage /boot/vmlinuz
+mv arch/x86/boot/bzImage /boot/vmlinuz
