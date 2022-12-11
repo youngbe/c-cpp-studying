@@ -1,0 +1,6 @@
+# 下载源码解压
+cp /boot/config-5.19.0-26-generic .config
+apt --no-install-recommends install gcc libc6-dev make libncurses-dev flex bison
+make menoconfig
+make -j8
+make install
