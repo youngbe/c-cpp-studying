@@ -1,5 +1,15 @@
 # 下载源码解压
+
+# 获取.config方法一
 cp /boot/config-5.19.0-26-generic .config
+
+# 获取.config方法二
+wget https://kernel.ubuntu.com/~kernel-ppa/mainline/v6.0.9/amd64/linux-modules-6.0.9-060009-generic_6.0.9-060009.202211161102_amd64.deb
+mkdir temp
+dpkg -X linux-modules-6.0.9-060009-generic_6.0.9-060009.202211161102_amd64.deb temp
+cp temp/boot/config-6.0.9-060009-generic .config
+
+# 安装依赖编译
 apt --no-install-recommends install gcc libc6-dev make libncurses-dev flex bison
 make menoconfig
 make -j8
