@@ -4,6 +4,7 @@ apt --no-install-recommends install gcc make libncurses-dev flex bison libelf-de
 
 # 路线一：替换本机Ubuntu内核
 # 1. 获取对应版本内核源码和config文件
+# 源码：apt source linux-image-xxx;如果安装了mainline的，直接下载linux官方的就行
 # config文件在 /boot/config-xxx
 # 2. 编译
 make menoconfig
