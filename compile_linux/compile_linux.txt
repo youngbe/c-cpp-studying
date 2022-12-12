@@ -22,7 +22,7 @@ make menoconfig
 make -j8 KERNELVERSION=6.0.9-060009-generic LOCALVERSION= bzImage
 # KERNELVERSION 和 LOCALVERSION=空 很重要，它关系到模块能否加载
 
-mv arch/x86/boot/bzImage /boot/vmlinuz
+mv arch/x86/boot/bzImage /boot/vmlinuz-6.0.9-060009-generic
 mv System.map /boot/System.map-6.0.9-060009-generic
 update-grub
 update-initramfs -c -k 6.0.9-060009-generic
