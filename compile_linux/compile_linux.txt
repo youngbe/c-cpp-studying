@@ -7,8 +7,8 @@ apt --no-install-recommends install gcc make libncurses-dev flex bison libelf-de
 # 路线一：替换本机Ubuntu内核
 # 1. 获取对应版本内核源码和config文件
 # 1.1 Ubuntu原版内核源码文件：https://launchpad.net/ubuntu/+source/linux/5.19.0-26.27，下载 orig.tar.gz 和 diff.tar.gz ，自己打patch
-# 1.2 Ubuntu Mainline源码：git clone git://git.launchpad.net/~ubuntu-kernel-test/ubuntu/+source/linux/+git/mainline-crack -b cod/mainline/v6.0.9 --depth 1；在 https://kernel.ubuntu.com/~kernel-ppa/mainline/v6.0.9/ 网站上方有写，注意commit id
-# 1.3 git clone git://kernel.ubuntu.com/kernel-ppa/stable-queue-branches.git --branch v6.0.9 --depth 1 获取的内核源码和原版内核一致
+# 1.2 Ubuntu Mainline源码：git clone git://git.launchpad.net/~ubuntu-kernel-test/ubuntu/+source/linux/+git/mainline-crack -b cod/mainline/v6.0.9 --depth 1；在 https://kernel.ubuntu.com/~kernel-ppa/mainline/v6.0.9/ 网站上方有写，注意commit id；和原版内核源码几乎完全一致
+# 1.3 git clone git://kernel.ubuntu.com/kernel-ppa/stable-queue-branches.git --branch v6.0.9 --depth 1；和原版内核源码一致
 # 1.4 git clone git://kernel.ubuntu.com/ubuntu-stable/ubuntu-stable-kinetic.git --branch Ubuntu-5.19.0-15.15 --depth 1
 # 1.5 config文件在 /boot/config-xxx
 # 2. 编译
