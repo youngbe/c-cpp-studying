@@ -19,7 +19,8 @@ make menoconfig
 # 关闭 FTRACE(如果要使用 -fomit-frame-pointer)
 # 关闭 CONFIG_STACK_VALIDATION (如果替换gcc优化)
 # 优化选项删除 -fstrict-aliasing -fmerge-all-constants
-make -j8
+make -j8 KERNELVERSION=6.0.9-060009-generic
+# KERNELVERSION很重要，它关系到模块能否加载
 make install
 
 mv arch/x86/boot/bzImage /boot/vmlinuz
