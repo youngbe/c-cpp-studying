@@ -5,6 +5,10 @@ apt --no-install-recommends install gcc make libncurses-dev flex bison libelf-de
 # 2. 替换优化gcc （可选）
 # 优化选项删除 -fstrict-aliasing -fmerge-all-constants
 
+# 3. 获取源码和.config
+# 4. 开关宏控：建议关闭 GCOV KASN FTRACE PSTORE KERNEL_DEBUG STACKPROTECTOR
+# 5. 编译安装
+
 # 路线一：替换本机当前内核image，仍然使用本机当前的modules，缺点：不能修改宏控
 # 1. 获取对应版本内核源码和config文件
 # 1.1 Ubuntu原版内核源码文件：https://launchpad.net/ubuntu/+source/linux/5.19.0-26.27，下载 orig.tar.gz 和 diff.tar.gz ，自己打patch
