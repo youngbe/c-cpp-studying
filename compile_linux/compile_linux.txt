@@ -34,7 +34,7 @@ update-initramfs -c -k 6.0.9-060009-generic
 update-grub
 
 
-# 路线二：替换本机当前内核，包括modules
+# 路线二：替换本机当前内核，将所有modules编入内核中（这样会导致所有模块强制加载，不推荐）
 # 内核源码可以使用不同版本
 # config文件使用 /boot/config-xxx
 sed -i 's#=m$#=y#g' .config 或者 make localyesmodconfig
