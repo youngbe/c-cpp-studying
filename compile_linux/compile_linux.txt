@@ -3,6 +3,7 @@ apt --no-install-recommends install gcc make libncurses-dev flex bison libelf-de
 # 1. 安装依赖 for aarch64 交叉编译
 
 # 2. 替换优化gcc （可选）
+# 优化选项删除 -fstrict-aliasing -fmerge-all-constants
 
 # 路线一：替换本机Ubuntu内核
 # 1. 获取对应版本内核源码和config文件
@@ -16,9 +17,13 @@ apt --no-install-recommends install gcc make libncurses-dev flex bison libelf-de
 make menoconfig
 # 清空 CONFIG_SYSTEM_TRUSTED_KEYS
 # 清空 CONFIG_SYSTEM_REVOCATION_KEYS
+# 关闭 CONFIG_MODVERSION
+# 关闭 签名验证
 # 关闭 FTRACE(如果要使用 -fomit-frame-pointer)
 # 关闭 CONFIG_STACK_VALIDATION (如果替换gcc优化)
-# 优化选项删除 -fstrict-aliasing -fmerge-all-constants
+
+# 修改 kernel/module.c ，注释 return -ENOEXEC
+
 make -j8 KERNELVERSION=6.0.9-060009-generic LOCALVERSION= KBUILD_BUILD_VERSION="202211161102" bzImage
 # KERNELVERSION 和 LOCALVERSION=空 很重要，它关系到模块能否加载
 
