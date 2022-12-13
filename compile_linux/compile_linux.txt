@@ -16,6 +16,7 @@ apt --no-install-recommends install gcc make libncurses-dev flex bison libelf-de
 #    INIT_STACK 和 -ftrivial-auto-var-init=uninitialized
 #    KERNEL_DEBUG 和 -g
 #    FTRACE 和 -pg
+#    ZERO_CALL_USED_REGS 和 fzero-call-used-regs=used-gpr
 # 5. 编译安装
 
 # 路线一：替换本机当前内核image，仍然使用本机当前的modules，缺点：不能修改宏控
