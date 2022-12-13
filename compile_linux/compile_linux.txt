@@ -3,7 +3,6 @@ apt --no-install-recommends install gcc make libncurses-dev flex bison libelf-de
 # 1. 安装依赖 for aarch64 交叉编译
 
 # 2. 替换优化gcc （可选）
-# 优化选项删除 -fstrict-aliasing -fmerge-all-constants
 
 # 3. 获取源码和.config
 # 4. 开关宏控：建议关闭 GCOV KASAN KCSAN KMSAN UBSAN FTRACE PSTORE KERNEL_DEBUG STACKPROTECTOR 虚拟化 KEXEC DEBUG_FS FRAME_POINTER(在x86上使用UNWINDER_ORC) INIT_STACK KPROBE KALLSYMS_ALL
