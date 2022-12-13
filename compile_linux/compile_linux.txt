@@ -26,3 +26,4 @@ mv arch/x86/boot/bzImage /boot/vmlinuz-6.0.9-060009-generic
 mv System.map /boot/System.map-6.0.9-060009-generic
 update-initramfs -c -k 6.0.9-060009-generic
 update-grub
+depmod -a
