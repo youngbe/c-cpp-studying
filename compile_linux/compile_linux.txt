@@ -22,7 +22,8 @@ make menoconfig
 # 关闭 FTRACE(如果要使用 -fomit-frame-pointer)
 # 关闭 CONFIG_STACK_VALIDATION (如果替换gcc优化)
 
-# 修改 kernel/module.c ，注释 return -ENOEXEC
+# 修改 kernel/module/main.c ，注释 return -ENOEXEC
+# 修改 kernel/module/version.c ，return 0;改成 return 1;
 
 make -j8 KERNELVERSION=6.0.9-060009-generic LOCALVERSION= KBUILD_BUILD_VERSION="202211161102" bzImage
 # KERNELVERSION 和 LOCALVERSION=空 很重要，它关系到模块能否加载
