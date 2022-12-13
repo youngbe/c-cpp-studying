@@ -6,7 +6,7 @@ apt --no-install-recommends install gcc make libncurses-dev flex bison libelf-de
 # 优化选项删除 -fstrict-aliasing -fmerge-all-constants
 
 # 3. 获取源码和.config
-# 4. 开关宏控：建议关闭 GCOV KASN FTRACE PSTORE KERNEL_DEBUG STACKPROTECTOR 虚拟化 KEXEC DEBUG_FS
+# 4. 开关宏控：建议关闭 GCOV KASN FTRACE PSTORE KERNEL_DEBUG STACKPROTECTOR 虚拟化 KEXEC DEBUG_FS FRAME_POINTER INIT_STACK
 # 5. 编译安装
 
 # 路线一：替换本机当前内核image，仍然使用本机当前的modules，缺点：不能修改宏控
