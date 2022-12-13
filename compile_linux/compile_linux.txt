@@ -5,7 +5,7 @@ apt --no-install-recommends install gcc make libncurses-dev flex bison libelf-de
 # 2. 替换优化gcc （可选）
 # 优化选项删除 -fstrict-aliasing -fmerge-all-constants
 
-# 路线一：替换本机当前安装的内核image，仍然使用本机当前的modules
+# 路线一：替换本机当前内核image，仍然使用本机当前的modules
 # 1. 获取对应版本内核源码和config文件
 # 1.1 Ubuntu原版内核源码文件：https://launchpad.net/ubuntu/+source/linux/5.19.0-26.27，下载 orig.tar.gz 和 diff.tar.gz ，自己打patch
 # 1.2 Ubuntu Mainline源码(https://git.launchpad.net/~ubuntu-kernel-test/ubuntu/+source/linux/+git/mainline-crack/)：git clone git://git.launchpad.net/~ubuntu-kernel-test/ubuntu/+source/linux/+git/mainline-crack -b cod/mainline/v6.0.9 --depth 1；在 https://kernel.ubuntu.com/~kernel-ppa/mainline/v6.0.9/ 网站上方有写，注意commit id；和原版内核源码几乎完全一致
@@ -21,7 +21,6 @@ make menoconfig
 # （目前看来不需要）关闭 模块签名验证
 # 不能修改其他任何宏控
 
-
 # （目前看来不需要）修改 kernel/module/main.c ，注释 return -ENOEXEC 
 # 修改 kernel/module/version.c ，return 0;改成 return 1;
 
@@ -36,5 +35,12 @@ update-grub
 
 
 # 路线二：替换本机当前内核，包括modules
+# 内核源码可以使用不同版本
+# config文件使用 /boot/config-xxx
+sed -i 's#=m$#=y#g' .config 或者 make localyesmodconfig
+
 # 关闭 FTRACE(如果要使用 -fomit-frame-pointer)
 # 关闭 CONFIG_STACK_VALIDATION (如果替换gcc优化)
+make menuconfig
+
+make -j8 bzImage
