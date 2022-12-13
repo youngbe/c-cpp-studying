@@ -47,9 +47,17 @@ make menuconfig
 make -j8 bzImage
 
 
-# 安装内核
+# 仅安装内核
 mv arch/x86/boot/bzImage /boot/vmlinuz-6.0.9-060009-generic
 mv System.map /boot/System.map-6.0.9-060009-generic
 depmod -a
 update-initramfs -c -k 6.0.9-060009-generic
+update-grub
+
+# 安装内核和模块
+make modules_install
+mv arch/x86/boot/bzImage /boot/vmlinuz-6.1.0
+mv System.map /boot/System.map-6.1.0
+depmod -a
+update-initramfs -c -k 6.1.0
 update-grub
