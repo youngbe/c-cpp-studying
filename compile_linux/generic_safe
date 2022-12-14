@@ -1,6 +1,5 @@
 #!/bin/bash
 base_flags=(
-    -march=native -mtune=native
     -fstack-reuse=all -fno-float-store -fjump-tables -fbit-tests -ftrivial-auto-var-init=uninitialized -fstdarg-opt -fno-conserve-stack -fzero-call-used-regs=skip
     -fno-exceptions -fno-asynchronous-unwind-tables -fno-unwind-tables
     -fstack-check=no -fno-stack-clash-protection -fno-stack-protector -fno-split-stack -fcf-protection=none -fno-sanitize=all -fno-instrument-functions
