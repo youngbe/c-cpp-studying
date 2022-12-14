@@ -76,6 +76,7 @@ update-grub
 cp arch/x86/boot/bzImage /boot/vmlinuz-6.1.0
 cp System.map /boot/System.map-6.1.0
 make INSTALL_HDR_PATH=/usr/src/linux-headers-6.1.0 headers_install
+make O=/usr/src/linux-headers-6.1.0 syncconfig prepare scripts
 make INSTALL_MOD_STRIP=1 modules_install
 depmod -a
 update-initramfs -c -k 6.1.0
