@@ -15,3 +15,5 @@ sudo apt --no-install-recommends install open-vm-tools-desktop
 
 sudo vim /etc/fstab
 删除swap
+
+sed -i 's#http://.*archive.ubuntu.com/ubuntu/#https://repo.huaweicloud.com/ubuntu/#g' /etc/apt/sources.list
