@@ -5,7 +5,7 @@ apt --no-install-recommends install gcc make libncurses-dev flex bison libelf-de
 # 2. 替换优化gcc （可选）
 
 # 3. 获取源码和.config
-# 4. 开关宏控：建议关闭 GCOV KASAN KCSAN KMSAN UBSAN FTRACE PSTORE DEBUG_FS DEBUG_KERNEL KGDB STACKPROTECTOR 虚拟化 KEXEC FRAME_POINTER(在x86上使用UNWINDER_ORC) INIT_STACK KPROBE KALLSYMS HACKING里面的几乎全部，secuirty里面的harden里面的几乎全部
+# 4. 开关宏控：建议关闭 GCOV KASAN KCSAN KMSAN UBSAN KFENCE FTRACE STACKTRACE FRAME_POINTER(在x86上使用UNWINDER_ORC) PSTORE DEBUG_FS SPECULATION_MITIGATIONS DEBUG_KERNEL KGDB STACKPROTECTOR 虚拟化 KEXEC INIT_STACK KPROBE KALLSYMS RUNTIME_TESTING_MENU HACKING里面的几乎全部，secuirty里面的harden里面的几乎全部
 # 4. gcc选项和宏控冲突关系：
 #    不支持 -fstrict-aliasing
 #    老版本内核不支持 -fmerge-all-constants
@@ -16,6 +16,7 @@ apt --no-install-recommends install gcc make libncurses-dev flex bison libelf-de
 #    KERNEL_DEBUG 和 -g
 #    FTRACE 和 -pg
 #    ZERO_CALL_USED_REGS 和 -fzero-call-used-regs=skip
+#    RETPOLINE 和 -fjump-tables
 # 5. 编译安装
 
 # 路线一：替换本机当前内核image，仍然使用本机当前的modules，缺点：不能修改宏控
