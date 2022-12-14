@@ -83,7 +83,8 @@ update-initramfs -c -k 6.1.0
 update-grub
 
 # 安装内核模块至指定路径：
-make INSTALL_MOD_STRIP=1 INSTALL_MOD_PATH=path modules_install
+make INSTALL_MOD_STRIP=1 INSTALL_MOD_PATH=fake_root modules_install
 
 # 安装headers至指定路径
-make INSTALL_HDR_PATH=path headers_install
+make INSTALL_HDR_PATH=fake_root/usr/src/linux-headers-6.1.0 headers_install
+make O=fake_root/usr/src/linux-headers-6.1.0 syncconfig prepare scripts
