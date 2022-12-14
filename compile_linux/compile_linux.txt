@@ -5,7 +5,7 @@ apt --no-install-recommends install gcc make libncurses-dev flex bison libelf-de
 # 2. 替换优化gcc （可选）
 
 # 3. 获取源码和.config
-# 4. 开关宏控：建议关闭 GCOV KASAN KCSAN KMSAN UBSAN FTRACE PSTORE KERNEL_DEBUG STACKPROTECTOR 虚拟化 KEXEC DEBUG_FS FRAME_POINTER(在x86上使用UNWINDER_ORC) INIT_STACK KPROBE KALLSYMS_ALL
+# 4. 开关宏控：建议关闭 GCOV KASAN KCSAN KMSAN UBSAN FTRACE PSTORE DEBUG_FS DEBUG_KERNEL KGDB STACKPROTECTOR 虚拟化 KEXEC FRAME_POINTER(在x86上使用UNWINDER_ORC) INIT_STACK KPROBE KALLSYMS
 # 4. gcc选项和宏控冲突关系：
 #    不支持 -fstrict-aliasing
 #    老版本内核不支持 -fmerge-all-constants
