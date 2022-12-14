@@ -9,7 +9,7 @@ apt --no-install-recommends install gcc make libncurses-dev flex bison libelf-de
 # 4. gcc选项和宏控冲突关系：
 #    不支持 -fstrict-aliasing
 #    老版本内核不支持 -fmerge-all-constants
-#    KASAN KCSAN KMSAN UBSAN 和 -fno-sanitize=all
+#    KASAN KCSAN KMSAN UBSAN CONFIG_SHADOW_CALL_STACK 和 -fno-sanitize=all
 #    FTRACE FRAME_POINTER 和 -fomit-frame-pointer
 #    STACKPROTECTOR 和 -fno-stack-protector
 #    INIT_STACK 和 -ftrivial-auto-var-init=uninitialized
