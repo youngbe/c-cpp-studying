@@ -72,10 +72,17 @@ depmod -a
 update-initramfs -c -k 6.0.9-060009-generic
 update-grub
 
-# 安装内核和模块
-mv arch/x86/boot/bzImage /boot/vmlinuz-6.1.0
+# 安装内核、模块和头文件
+cp arch/x86/boot/bzImage /boot/vmlinuz-6.1.0
 cp System.map /boot/System.map-6.1.0
-make modules_install
+make headers_install
+make INSTALL_MOD_STRIP=1 modules_install
 depmod -a
 update-initramfs -c -k 6.1.0
 update-grub
+
+# 安装内核模块至指定路径：
+make INSTALL_MOD_STRIP=1 INSTALL_MOD_PATH=path modules_install
+
+# 安装headers至指定路径
+make INSTALL_HDR_PATH=path headers_install
