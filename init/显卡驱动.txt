@@ -3,3 +3,5 @@
 
 # Nvidia driver
 开源：nova
+
+apt --no-install-recommends install nvidia-driver-525
