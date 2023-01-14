@@ -13,7 +13,7 @@
 cat > /bin/gcc-me << EOF
 #!/bin/bash
 gcc \\
-    -fstack-reuse=all -fno-float-store -fjump-tables -fbit-tests -ftrivial-auto-var-init=uninitialized -fstdarg-opt -fno-conserve-stack -fzero-call-used-regs=skip -ffp-contract=fast \\
+    -fstack-reuse=all -fjump-tables -fbit-tests -fno-float-store -ftrivial-auto-var-init=uninitialized -fstdarg-opt -fno-conserve-stack -fzero-call-used-regs=skip -ffp-contract=fast \\
     -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -ffinite-loops -foptimize-sibling-calls -ftree-loop-vectorize -ftree-slp-vectorize -ffast-math -fno-rounding-math -fexcess-precision=fast -fno-signed-zeros -fno-trapping-math -fallow-store-data-races \\
     -fipa-pta -fdevirtualize-at-ltrans -fmerge-all-constants -funroll-all-loops \\
     -fno-exceptions -fno-asynchronous-unwind-tables -fno-unwind-tables \\
@@ -24,7 +24,7 @@ EOF
 cat > /bin/g++-me << EOF
 #!/bin/bash
 g++ \\
-    -fstack-reuse=all -fno-float-store -fjump-tables -fbit-tests -ftrivial-auto-var-init=uninitialized -fstdarg-opt -fno-conserve-stack -fzero-call-used-regs=skip -ffp-contract=fast \\
+    -fstack-reuse=all -fjump-tables -fbit-tests -fno-float-store -ftrivial-auto-var-init=uninitialized -fstdarg-opt -fno-conserve-stack -fzero-call-used-regs=skip -ffp-contract=fast \\
     -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -ffinite-loops -foptimize-sibling-calls -ftree-loop-vectorize -ftree-slp-vectorize -ffast-math -fno-rounding-math -fexcess-precision=fast -fno-signed-zeros -fno-trapping-math -fallow-store-data-races \\
     -fipa-pta -fdevirtualize-at-ltrans -fmerge-all-constants -funroll-all-loops \\
     -fno-rtti \\
