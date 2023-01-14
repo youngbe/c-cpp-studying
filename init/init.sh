@@ -1,3 +1,4 @@
+# -fdwarf2-cfi-asm -fplt :只是配置
 # -floop-nest-optimize ：此选项已经存在多年，但仍未启用
 # -fsection-anchors ： x86 不支持
 # -mskip-rax-setup ：只支持x86 32位 -mgeneral-regs-only
@@ -11,8 +12,7 @@
 cat > /bin/gcc-me << EOF
 #!/bin/bash
 gcc \\
-    -fwrapv -fwrapv-pointer -fno-trapv \\
-    -fdwarf2-cfi-asm -fplt -fstack-reuse=all -fno-float-store -fjump-tables -fbit-tests -ftrivial-auto-var-init=uninitialized -fstdarg-opt -fno-conserve-stack -fzero-call-used-regs=skip -ffp-contract=fast \\
+     -fstack-reuse=all -fno-float-store -fjump-tables -fbit-tests -ftrivial-auto-var-init=uninitialized -fstdarg-opt -fno-conserve-stack -fzero-call-used-regs=skip -ffp-contract=fast \\
     -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -ffinite-loops -foptimize-sibling-calls -ftree-loop-vectorize -ftree-slp-vectorize -ffast-math -fno-rounding-math -fexcess-precision=fast -fno-signed-zeros -fno-trapping-math -fallow-store-data-races \\
     -fipa-pta -fdevirtualize-at-ltrans -fmerge-all-constants -funroll-all-loops \\
     -fno-exceptions -fno-asynchronous-unwind-tables -fno-unwind-tables \\
@@ -23,8 +23,7 @@ EOF
 cat > /bin/g++-me << EOF
 #!/bin/bash
 g++ \\
-    -fwrapv -fwrapv-pointer -fno-trapv \\
-    -fdwarf2-cfi-asm -fplt -fstack-reuse=all -fno-float-store -fjump-tables -fbit-tests -ftrivial-auto-var-init=uninitialized -fstdarg-opt -fno-conserve-stack -fzero-call-used-regs=skip -ffp-contract=fast \\
+    -fstack-reuse=all -fno-float-store -fjump-tables -fbit-tests -ftrivial-auto-var-init=uninitialized -fstdarg-opt -fno-conserve-stack -fzero-call-used-regs=skip -ffp-contract=fast \\
     -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -ffinite-loops -foptimize-sibling-calls -ftree-loop-vectorize -ftree-slp-vectorize -ffast-math -fno-rounding-math -fexcess-precision=fast -fno-signed-zeros -fno-trapping-math -fallow-store-data-races \\
     -fipa-pta -fdevirtualize-at-ltrans -fmerge-all-constants -funroll-all-loops \\
     -fno-rtti \\
