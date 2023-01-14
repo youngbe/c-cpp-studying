@@ -8,14 +8,13 @@
 # -finhibit-size-directive
 # -ftree-vectorize ：本身没作用，显式打开相当于打开 -ftree-loop-vectorize -ftree-slp-vectorize，显示关闭相当于关闭 那俩；更多地使用浮点寄存器，是-O2到-O3负优化的罪魁祸首
 # -fno-pcc-struct-return -freg-struct-return :二进制不兼容
-# -fnon-call-exceptions -fdelete-dead-exceptions ：待考究
 
 cat > /bin/gcc-me << EOF
 #!/bin/bash
 gcc \\
-    -fstack-reuse=all -fjump-tables -fbit-tests -fno-float-store -ftrivial-auto-var-init=uninitialized -fstdarg-opt -fno-conserve-stack -fzero-call-used-regs=skip -ffp-contract=fast \\
+    -fstack-reuse=all -fjump-tables -fbit-tests -fno-non-call-exceptions -fno-float-store -ftrivial-auto-var-init=uninitialized -fstdarg-opt -fno-conserve-stack -fzero-call-used-regs=skip -ffp-contract=fast \\
     -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -ffinite-loops -foptimize-sibling-calls -ftree-loop-vectorize -ftree-slp-vectorize -ffast-math -fno-rounding-math -fexcess-precision=fast -fno-signed-zeros -fno-trapping-math -fallow-store-data-races \\
-    -fipa-pta -fdevirtualize-at-ltrans -fmerge-all-constants -funroll-all-loops \\
+    -fdelete-dead-exceptions -fipa-pta -fdevirtualize-at-ltrans -fmerge-all-constants -funroll-all-loops \\
     -fno-exceptions -fno-asynchronous-unwind-tables -fno-unwind-tables \\
     -fstack-check=no -fno-stack-clash-protection -fno-stack-protector -fno-split-stack -fcf-protection=none -fno-sanitize=all -fno-instrument-functions \\
     -std=gnu2x -D_GNU_SOURCE -g0 -Ofast -Wall -Wextra -Wstrict-prototypes "\$@"
@@ -24,10 +23,9 @@ EOF
 cat > /bin/g++-me << EOF
 #!/bin/bash
 g++ \\
-    -fstack-reuse=all -fjump-tables -fbit-tests -fno-float-store -ftrivial-auto-var-init=uninitialized -fstdarg-opt -fno-conserve-stack -fzero-call-used-regs=skip -ffp-contract=fast \\
+    -fstack-reuse=all -fjump-tables -fbit-tests -fno-non-call-exceptions -fno-float-store -ftrivial-auto-var-init=uninitialized -fstdarg-opt -fno-conserve-stack -fzero-call-used-regs=skip -ffp-contract=fast \\
     -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -ffinite-loops -foptimize-sibling-calls -ftree-loop-vectorize -ftree-slp-vectorize -ffast-math -fno-rounding-math -fexcess-precision=fast -fno-signed-zeros -fno-trapping-math -fallow-store-data-races \\
-    -fipa-pta -fdevirtualize-at-ltrans -fmerge-all-constants -funroll-all-loops \\
-    -fno-rtti \\
+    -fdelete-dead-exceptions -fipa-pta -fdevirtualize-at-ltrans -fmerge-all-constants -funroll-all-loops \\
     -fstack-check=no -fno-stack-clash-protection -fno-stack-protector -fno-split-stack -fcf-protection=none -fno-sanitize=all -fno-instrument-functions -fvtable-verify=none -fno-threadsafe-statics \\
     -std=gnu++23 -D_GNU_SOURCE -g0 -Ofast -Wall -Wextra "\$@"
 EOF
