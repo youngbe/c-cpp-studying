@@ -32,6 +32,25 @@ EOF
 
 chmod +x /bin/gcc-me /bin/g++-me
 
+# clang 不支持的选项：
+# -fstack-reuse=all -fbit-tests -fno-float-store -fstdarg-opt -fno-conserve-stack
+# -ftree-loop-vectorize -fexcess-precision=fast -fallow-store-data-races
+# -fdelete-dead-exceptions -fipa-pta -fdevirtualize-at-ltrans -funroll-all-loops
+# -fno-instrument-functions
+
+cat > /usr/bin/clang-me << EOF
+#!/bin/bash
+clang \\
+    -fjump-tables -fno-non-call-exceptions -ftrivial-auto-var-init=uninitialized -fzero-call-used-regs=skip -ffp-contract=fast \\
+    -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -ffinite-loops -foptimize-sibling-calls -ftree-slp-vectorize -ffast-math -fno-rounding-math -fno-signed-zeros -fno-trapping-math \
+    -fmerge-all-constants \\
+    -fno-exceptions -fno-asynchronous-unwind-tables -fno-unwind-tables \\
+    -fno-stack-check -fno-stack-clash-protection -fno-stack-protector -fno-split-stack -fcf-protection=none -fno-sanitize=all \\
+    -std=gnu2x -D_GNU_SOURCE -g0 -Ofast -Wall -Wextra -Wstrict-prototypes "\$@"
+EOF
+
+chmod +x /bin/clang-me
+
 cat >> /usr/share/vim/vim90/defaults.vim <<EOF
 
 set mouse-=a
