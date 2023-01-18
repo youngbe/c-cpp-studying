@@ -40,12 +40,13 @@ chmod +x /bin/gcc-me /bin/g++-me
 # 和GCC不同的选项：
 # -fno-rounding-math -ffp-contract=fast
 # -fslp-vectorize == -ftree-slp-vectorize
+# -fvectorize == -ftree-loop-vectorize
 
 cat > /usr/bin/clang-me << EOF
 #!/bin/bash
 clang \\
     -fjump-tables -fno-non-call-exceptions -ftrivial-auto-var-init=uninitialized -fzero-call-used-regs=skip -fno-rounding-math \\
-    -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -ffinite-loops -foptimize-sibling-calls -fslp-vectorize -ffast-math -ffp-contract=fast -fno-signed-zeros -fno-trapping-math \
+    -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -ffinite-loops -foptimize-sibling-calls -fvectorize -fslp-vectorize -ffast-math -ffp-contract=fast -fno-signed-zeros -fno-trapping-math \
     -fmerge-all-constants \\
     -fno-exceptions -fno-asynchronous-unwind-tables -fno-unwind-tables \\
     -fno-stack-check -fno-stack-clash-protection -fno-stack-protector -fno-split-stack -fcf-protection=none -fno-sanitize=all \\
