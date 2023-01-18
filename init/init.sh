@@ -41,8 +41,8 @@ chmod +x /bin/gcc-me /bin/g++-me
 cat > /usr/bin/clang-me << EOF
 #!/bin/bash
 clang \\
-    -fjump-tables -fno-non-call-exceptions -ftrivial-auto-var-init=uninitialized -fzero-call-used-regs=skip -ffp-contract=fast \\
-    -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -ffinite-loops -foptimize-sibling-calls -ftree-slp-vectorize -ffast-math -fno-rounding-math -fno-signed-zeros -fno-trapping-math \
+    -fjump-tables -fno-non-call-exceptions -ftrivial-auto-var-init=uninitialized -fzero-call-used-regs=skip -fno-rounding-math \\
+    -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -ffinite-loops -foptimize-sibling-calls -ftree-slp-vectorize -ffast-math -ffp-contract=fast -fno-signed-zeros -fno-trapping-math \
     -fmerge-all-constants \\
     -fno-exceptions -fno-asynchronous-unwind-tables -fno-unwind-tables \\
     -fno-stack-check -fno-stack-clash-protection -fno-stack-protector -fno-split-stack -fcf-protection=none -fno-sanitize=all \\
