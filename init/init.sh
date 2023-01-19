@@ -38,6 +38,7 @@ chmod +x /bin/gcc-me /bin/g++-me
 # -fdelete-dead-exceptions -fipa-pta -fdevirtualize-at-ltrans -funroll-all-loops
 # -fno-instrument-functions
 # 和GCC不同的选项：
+# -ffinite-loops
 # -fno-rounding-math -ffp-contract=fast
 # -fslp-vectorize == -ftree-slp-vectorize
 # -fvectorize == -ftree-loop-vectorize
