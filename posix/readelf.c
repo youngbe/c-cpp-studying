@@ -2,11 +2,12 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 enum elf_type
 {
-    ELF32,
-    ELF64,
+    ELF32 = 1,
+    ELF64 = 2,
 };
 
 struct ELF_Header
@@ -47,37 +48,6 @@ int parse_elf(struct ELF_Header *const header, FILE *const fp)
     return 0;
 }
 
-/*
-static inline int process_elf32(FILE *const fp)
-{
-    Elf32_Ehdr ehdr;
-    int ret;
-    ret = fread(&ehdr, sizeof(ehdr), 1, fp);
-    if (ret != 0)
-        return ret;
-
-    ret = fseek(fp, ehdr.e_shoff, SEEK_SET);
-    if (ret != 0)
-        return ret;
-
-    Elf32_Shdr *const sh_table = (Elf32_Shdr *)malloc(sizeof(ehdr.e_shentsize * ehdr.e_shnum));
-    if (sh_table == NULL)
-        return -1;
-
-    if (fread(sh_table, ehdr.e_shentsize * ehdr.e_shnum, 1, fp) != 1) {
-        ret = -1;
-        goto label_error1;
-    }
-
-    free(sh_table);
-    return 0;
-
-label_error1:
-    free(sh_table);
-    return ret;
-}
-*/
-
 int main(int argc, char *argv[])
 {
     if (argc != 2) {
@@ -95,6 +65,67 @@ int main(int argc, char *argv[])
         fprintf(stderr, "Failed to parse elf!\n");
         goto label_error1;
     }
+    void *buf0;
+    void *buf1;
+
+    if (elf_header.type == ELF64) {
+        const Elf64_Ehdr *const p_ehdr = &elf_header.ehdr64;
+
+        if (p_ehdr->e_shoff == 0) {
+            ret = -1;
+            fputs("没有节头表!\n", stderr);
+            goto label_error1;
+        }
+
+        printf("节的个数：%hu\n", p_ehdr->e_shnum);
+        printf("节字符串节的节号：%hu\n", p_ehdr->e_shstrndx);
+
+        // Elf64_Shdr shdrs[p_ehdr->e_shnum]
+        Elf64_Shdr *const shdrs = malloc(sizeof(Elf64_Shdr [p_ehdr->e_shnum]));
+        if (shdrs == NULL) {
+            ret = -1;
+            fputs("error!\n", stderr);
+            goto label_error1;
+        }
+
+        buf0 = shdrs;
+
+        ret = fseek(fp, p_ehdr->e_shoff, SEEK_SET);
+        if (ret) {
+            fputs("error!\n", stderr);
+            goto label_error2;
+        }
+        if (fread(shdrs, sizeof(Elf64_Shdr [p_ehdr->e_shnum]), 1, fp) != 1) {
+            ret = -1;
+            fputs("error!\n", stderr);
+            goto label_error2;
+        }
+        ret = fseek(fp, shdrs[p_ehdr->e_shstrndx].sh_offset, SEEK_SET);
+        if (ret) {
+            fputs("error!\n", stderr);
+            goto label_error2;
+        }
+        char *const shstr = malloc(shdrs[p_ehdr->e_shstrndx].sh_size);
+        if (shstr == NULL) {
+            ret = -1;
+            fputs("error!\n", stderr);
+            goto label_error2;
+        }
+        buf1 = shstr;
+        if (fread(shstr, shdrs[p_ehdr->e_shstrndx].sh_size, 1, fp) != 1) {
+            ret = -1;
+            fputs("error!\n", stderr);
+            goto label_error3;
+        }
+
+        for (size_t i = 0; i < p_ehdr->e_shnum; ++i) {
+            printf("offset: %u\n", shdrs[i].sh_name);
+            printf("%s\n", &shstr[shdrs[i].sh_name]);
+        }
+
+        free(shstr);
+        free(shdrs);
+    }
 
 
     ret = fclose(fp);
@@ -102,6 +133,10 @@ int main(int argc, char *argv[])
         fprintf(stderr, "Error: fclose(%s)\n", argv[1]);
     return ret;
 
+label_error3:
+    free(buf1);
+label_error2:
+    free(buf0);
 label_error1:
     fclose(fp);
     return ret;
