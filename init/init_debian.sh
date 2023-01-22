@@ -6,7 +6,7 @@ apt --no-install-recommends -y install language-pack-zh-hans
 
 #apt --no-install-recommends install open-vm-tools-desktop
 #apt --no-install-recommends install openjdk-18-jdk-headless python3-minimal python3-pip mysql-server
-apt --no-install-recommends install vim gcc libc6-dev libc6-dev-i386-amd64-cross g++ git openssh-client make gdb gedit
+apt --no-install-recommends install vim gcc libc6-dev libc6-dev-i386-amd64-cross clang libc6-dev-i386 g++ git openssh-client make gdb gedit
 
 # 拼音输入fcitx5
 sudo apt --no-install-recommends install fcitx5 fcitx5-pinyin fcitx5-module-cloudpinyin fcitx5-frontend-gtk2 fcitx5-frontend-gtk3 fcitx5-frontend-gtk4 fcitx5-frontend-qt5 fcitx5-module-xorg language-selector-gnome
