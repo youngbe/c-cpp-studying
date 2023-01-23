@@ -1,7 +1,7 @@
 # -fdwarf2-cfi-asm -fplt :只是配置
 # -floop-nest-optimize ：此选项已经存在多年，但仍未启用
 # -fsection-anchors ： x86 不支持
-# -mskip-rax-setup ：只支持x86 32位 -mgeneral-regs-only
+# -mskip-rax-setup ：只支持x86_64 -mgeneral-regs-only
 # -funroll-completely-grow-size ：目前没有发现作用
 # -fstrict-volatile-bitfields ：很有意思
 # -frecord-gcc-switches
