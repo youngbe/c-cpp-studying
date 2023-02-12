@@ -34,7 +34,7 @@ chmod +x /bin/gcc-me /bin/g++-me
 
 # clang 不支持的选项：
 # -fstack-reuse=all -fbit-tests -fno-float-store -fstdarg-opt -fno-conserve-stack
-# -ftree-loop-vectorize -fexcess-precision=fast -fallow-store-data-races
+# -fexcess-precision=fast -fallow-store-data-races
 # -fdelete-dead-exceptions -fipa-pta -fdevirtualize-at-ltrans -funroll-all-loops
 # -fno-instrument-functions
 # 和GCC不同的选项：
@@ -47,6 +47,7 @@ cat > /usr/bin/clang-me << EOF
 #!/bin/bash
 clang \\
     -Xclang -pic-level -Xclang 0 -fno-addrsig \\
+    -fno-float-store -fexcess-precision=fast -funroll-all-loops -Wno-ignored-optimization-argument -Wno-unused-command-line-argument\\
     -fjump-tables -fno-non-call-exceptions -ftrivial-auto-var-init=uninitialized -fzero-call-used-regs=skip -fno-rounding-math \\
     -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -ffinite-loops -foptimize-sibling-calls -fvectorize -fslp-vectorize -ffast-math -ffp-contract=fast -fno-signed-zeros -fno-trapping-math \\
     -fmerge-all-constants \\
