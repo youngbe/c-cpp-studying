@@ -17,7 +17,7 @@ gcc \\
     -fdelete-dead-exceptions -ffinite-loops -fipa-pta -fdevirtualize-at-ltrans -fmerge-all-constants -funroll-all-loops \\
     -fno-exceptions -fno-asynchronous-unwind-tables -fno-unwind-tables \\
     -fstack-check=no -fno-stack-clash-protection -fno-stack-protector -fno-split-stack -fcf-protection=none -fno-sanitize=all -fno-instrument-functions \\
-    -std=gnu2x -D_GNU_SOURCE -g0 -Ofast -Wall -Wextra -Wstrict-prototypes "\$@"
+    -std=gnu2x -D_GNU_SOURCE -g0 -Ofast -Wall -Wextra -Wstrict-prototypes -Wshadow "\$@"
 EOF
 
 cat > /bin/g++-me << EOF
@@ -27,7 +27,7 @@ g++ \\
     -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -ffinite-loops -foptimize-sibling-calls -ftree-loop-vectorize -ftree-slp-vectorize -ffast-math -fno-rounding-math -fexcess-precision=fast -fno-signed-zeros -fno-trapping-math -fallow-store-data-races \\
     -fdelete-dead-exceptions -fipa-pta -fdevirtualize-at-ltrans -fmerge-all-constants -funroll-all-loops \\
     -fstack-check=no -fno-stack-clash-protection -fno-stack-protector -fno-split-stack -fcf-protection=none -fno-sanitize=all -fno-instrument-functions -fvtable-verify=none -fno-threadsafe-statics \\
-    -std=gnu++23 -D_GNU_SOURCE -g0 -Ofast -Wall -Wextra "\$@"
+    -std=gnu++23 -D_GNU_SOURCE -g0 -Ofast -Wall -Wextra -Wshadow "\$@"
 EOF
 
 chmod +x /bin/gcc-me /bin/g++-me
@@ -47,16 +47,29 @@ cat > /usr/bin/clang-me << EOF
 #!/bin/bash
 clang \\
     -Xclang -pic-level -Xclang 0 -fno-addrsig \\
-    -fno-float-store -fexcess-precision=fast -funroll-all-loops -Wno-ignored-optimization-argument -Wno-unused-command-line-argument\\
+    -fno-float-store -fexcess-precision=fast -funroll-all-loops -Wno-ignored-optimization-argument -Wno-unused-command-line-argument \\
     -fjump-tables -fno-non-call-exceptions -ftrivial-auto-var-init=uninitialized -fzero-call-used-regs=skip -fno-rounding-math \\
     -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -ffinite-loops -foptimize-sibling-calls -fvectorize -fslp-vectorize -ffast-math -ffp-contract=fast -fno-signed-zeros -fno-trapping-math \\
     -fmerge-all-constants \\
     -fno-exceptions -fno-asynchronous-unwind-tables -fno-unwind-tables \\
     -fno-stack-check -fno-stack-clash-protection -fno-stack-protector -fno-split-stack -fcf-protection=none -fno-sanitize=all \\
-    -std=gnu2x -D_GNU_SOURCE -g0 -Ofast -Wall -Wextra -Wstrict-prototypes "\$@"
+    -std=gnu2x -D_GNU_SOURCE -g0 -Ofast -Wall -Wextra -Wstrict-prototypes -Wshadow "\$@"
 EOF
 
-chmod +x /bin/clang-me
+cat > /usr/bin/clang++-me << EOF
+#!/bin/bash
+clang++ \\
+    -Xclang -pic-level -Xclang 0 -fno-addrsig \\
+    -fno-float-store -fexcess-precision=fast -funroll-all-loops -Wno-ignored-optimization-argument -Wno-unused-command-line-argument \\
+    -fjump-tables -fno-non-call-exceptions -ftrivial-auto-var-init=uninitialized -fzero-call-used-regs=skip -fno-rounding-math \\
+    -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -ffinite-loops -foptimize-sibling-calls -fvectorize -fslp-vectorize -ffast-math -ffp-contract=fast -fno-signed-zeros -fno-trapping-math \\
+    -fmerge-all-constants \\
+    -fno-exceptions -fno-asynchronous-unwind-tables -fno-unwind-tables \\
+    -fno-stack-check -fno-stack-clash-protection -fno-stack-protector -fno-split-stack -fcf-protection=none -fno-sanitize=all \\
+    -std=gnu++23 -D_GNU_SOURCE -g0 -Ofast -Wall -Wextra -Wstrict-prototypes -Wshadow "\$@"
+EOF
+
+chmod +x /bin/clang-me /bin/clang++-me
 
 cat >> /usr/share/vim/vim90/defaults.vim <<EOF
 
