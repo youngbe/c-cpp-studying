@@ -19,8 +19,17 @@ return {
     },
   },
   colors = {
+    -- 文本颜色
     foreground = 'white',
+    -- 背景颜色
+    background = 'black',
+    -- 光标颜色
+    cursor_bg = 'white',
+    -- 光标颜色（闪烁间）
+    cursor_fg = 'black'
   },
+  -- 不隐藏鼠标
+  hide_mouse_cursor_when_typing = false,
   scrollback_lines = 1000000,
   color_scheme = "Windows High Contrast (base16)",
   enable_wayland = true,
