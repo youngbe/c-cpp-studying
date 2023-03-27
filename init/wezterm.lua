@@ -2,11 +2,23 @@ local wezterm = require 'wezterm'
 return {
   font = wezterm.font_with_fallback {
     'UbuntuMono',
+    -- apt --no-install-recommends install fonts-noto-cjk-extra fonts-noto-cjk
+    'Noto Sans CJK SC'
   },
-  font_size = 27,
+  font_size = 22,
   line_height = 1.22,
   cell_width = 1.0,
-  window_background_opacity = 0.9,
+  
+  -- 1. 设置背景透明
+  -- window_background_opacity = 0.9,
+  
+  -- 2. 设置背景图片
+  window_background_image = '/home/ig/图片/大鸭鸭.jpg',
+  window_background_image_hsb = {
+    -- Darken the background image by reducing it to 1/3rd
+    brightness = 0.03
+  },
+  
   default_cursor_style = "BlinkingBlock",
   cursor_blink_rate = 600,
   cursor_blink_ease_in = 'Constant',
