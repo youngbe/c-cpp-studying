@@ -62,7 +62,7 @@ clang++ \\
     -Xclang -pic-level -Xclang 0 -fno-addrsig \\
     -fno-float-store -fexcess-precision=fast -funroll-all-loops -Wno-ignored-optimization-argument -Wno-unused-command-line-argument \\
     -fjump-tables -fno-non-call-exceptions -ftrivial-auto-var-init=uninitialized -fzero-call-used-regs=skip -fno-rounding-math \\
-    -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -ffinite-loops -foptimize-sibling-calls -fvectorize -fslp-vectorize -ffast-math -ffp-contract=fast -fno-signed-zeros -fno-trapping-math \\
+    -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -ffinite-loops -foptimize-sibling-calls -fvectorize -fslp-vectorize -ffast-math -ffp-contract=fast -fno-signed-zeros -fno-trapping-math -funroll-loops \\
     -fmerge-all-constants \\
     -fno-exceptions -fno-asynchronous-unwind-tables -fno-unwind-tables \\
     -fno-stack-check -fno-stack-clash-protection -fno-stack-protector -fno-split-stack -fcf-protection=none -fno-sanitize=all \\
