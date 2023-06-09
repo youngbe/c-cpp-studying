@@ -94,6 +94,7 @@ EOF
 cat >> ~/.bashrc << EOF
 HISTSIZE=-1
 HISTFILESIZE=-1
+HISTTIMEFORMAT='%F %T '
 EOF
 
 export LANG=zh_CN.utf8 LANGUAGE=zh_CN.utf8
