@@ -10,7 +10,8 @@ sudo apt purge --auto-remove snapd gvfs "gvfs-*" "update-notifier*" "ubuntu-rele
 # gvfs：u盘自动挂载
 # nautilus：文件管理器
 # gnome-control-center：设置
-sudo apt --no-install-recommends install gdm3 ubuntu-session network-manager at-spi2-core gvfs nautilus gnome-control-center
+# gnome-shell-extension-ubuntu-dock ：dock栏
+sudo apt --no-install-recommends install gdm3 ubuntu-session network-manager at-spi2-core gvfs nautilus gnome-control-center gnome-shell-extension-ubuntu-dock
 sudo apt --no-install-recommends install open-vm-tools-desktop
 
 sudo vim /etc/fstab
