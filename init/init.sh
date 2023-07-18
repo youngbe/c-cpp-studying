@@ -82,6 +82,7 @@ set autoindent
 set smartindent
 set cindent
 set cinoptions+=g0
+set hlsearch
 EOF
 
 cat >> ~/.inputrc << EOF
