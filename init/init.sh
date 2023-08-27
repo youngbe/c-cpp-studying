@@ -66,7 +66,7 @@ clang++ \\
     -fmerge-all-constants \\
     -fno-exceptions -fno-asynchronous-unwind-tables -fno-unwind-tables \\
     -fno-stack-check -fno-stack-clash-protection -fno-stack-protector -fno-split-stack -fcf-protection=none -fno-sanitize=all \\
-    -std=gnu++23 -D_GNU_SOURCE -g0 -Ofast -Wall -Wextra -Wstrict-prototypes -Wshadow "\$@"
+    -std=gnu++2b -D_GNU_SOURCE -g0 -Ofast -Wall -Wextra -Wstrict-prototypes -Wshadow "\$@"
 EOF
 
 chmod +x /bin/clang-me /bin/clang++-me
