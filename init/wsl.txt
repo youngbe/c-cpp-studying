@@ -1,0 +1,32 @@
+wsl --install --no-distribution -n
+wsl --update
+wsl --version
+wsl --set-default-version 2
+wsl --import Ubuntu-23.04 E:\vm\wsl_ubuntu E:\xiazai\ubuntu-base-23.04-base-amd64.tar --version 2
+#wsl -d Ubuntu-23.04 -e /bin/su -l root
+wsl -d Ubuntu-23.04 -u root --cd /root -e /bin/bash --login
+
+sed -i 's#http://archive.ubuntu.com/ubuntu#http://mirrors.huaweicloud.com/ubuntu#g' /etc/apt/sources.list
+sed -i 's#http://security.ubuntu.com/ubuntu#http://mirrors.huaweicloud.com/ubuntu#g' /etc/apt/sources.list
+
+apt update
+apt --no-install-recommends -y install apt-utils
+apt --no-install-recommends -y install whiptail
+apt --no-install-recommends --auto-remove --purge -y full-upgrade
+apt --no-install-recommends -y install language-pack-zh-hans
+export LANG=zh_CN.utf8 LANGUAGE=zh_CN.utf8
+echo "export LANG=zh_CN.utf8 LANGUAGE=zh_CN.utf8" >> "$HOME/.profile"
+
+apt --no-install-recommends -y install systemd-sysv
+echo '[boot]' > /etc/wsl.conf
+echo 'systemd=true' >> /etc/wsl.conf
+exit
+
+wsl --shutdown
+wsl -d Ubuntu-23.04 -u root --cd /root -e /bin/bash --login
+
+
+# 其它：
+wsl -l --all -v
+wsl --shutdown
+wsl --unregister Ubuntu-23.04
