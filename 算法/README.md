@@ -10,7 +10,7 @@
 树：
 1. 树转字符串/字符串转树：https://leetcode.cn/problems/construct-string-from-binary-tree/ https://leetcode.cn/problems/serialize-and-deserialize-binary-tree/ https://leetcode.cn/problems/find-duplicate-subtrees/
 2. 树的最长路径/最小高度树：https://leetcode.cn/problems/minimum-height-trees/
-3. 遍历树：https://leetcode.cn/problems/diameter-of-binary-tree/ https://leetcode.cn/problems/minimum-height-trees/ https://leetcode.cn/problems/binary-tree-maximum-path-sum/
+3. 遍历树：https://leetcode.cn/problems/diameter-of-binary-tree/ https://leetcode.cn/problems/minimum-height-trees/ https://leetcode.cn/problems/binary-tree-maximum-path-sum/ https://leetcode.cn/problems/time-needed-to-inform-all-employees/
 4. 树的数组表示方式：https://leetcode.cn/problems/reverse-odd-levels-of-binary-tree/
 
 #
