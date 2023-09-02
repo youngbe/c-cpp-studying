@@ -14,33 +14,35 @@
 4. 树的数组表示方式：https://leetcode.cn/problems/reverse-odd-levels-of-binary-tree/
 
 #
-1. 动态规划：爬楼梯：https://leetcode.cn/problems/climbing-stairs/submissions/
-2. 动态规划：0-1背包问题、多重背包问题、完全背包问题
-3. 动态规划：多维背包问题：https://leetcode.cn/problems/ones-and-zeroes/
-4. 动态规划：组合问题：https://leetcode.cn/problems/coin-change-2/ https://leetcode.cn/problems/combination-sum-iv/
-5. 动态规划：最长上升子序列（LIS）：https://leetcode.cn/problems/longest-increasing-subsequence/submissions/
-6. 动态规划：最长公共子序列（LCS）：https://leetcode.cn/problems/longest-common-subsequence/
-7. 动态规划：最长公共子串：https://leetcode.cn/problems/maximum-length-of-repeated-subarray/
-8. 动态规划：最长的斐波那契子序列：https://leetcode.cn/problems/length-of-longest-fibonacci-subsequence/
-9. 回溯法：解数独：https://leetcode.cn/problems/sudoku-solver/
-10. 回溯法：N皇后问题：https://leetcode.cn/problems/n-queens/
-11. 字符串哈希：https://leetcode.cn/problems/repeated-dna-sequences/
-12. 字符串哈希：https://leetcode.cn/problems/longest-duplicate-substring/
-13. 字符串哈希：https://leetcode.cn/problems/shortest-palindrome/
-14. 字符串哈希：https://leetcode.cn/problems/maximum-length-of-repeated-subarray/
-15. 字符串哈希：https://leetcode.cn/problems/longest-common-subpath/
-16. KMP算法：子串匹配：https://leetcode.cn/problems/implement-strstr/
-17. 快速幂pow：https://leetcode.cn/problems/powx-n/submissions/
-18. 报数游戏（约瑟夫环）：https://leetcode.cn/problems/find-the-winner-of-the-circular-game/
-19. 字典树：https://leetcode.cn/problems/sum-of-prefix-scores-of-strings/
-35. 最大公约数/最小公倍数：https://www.nowcoder.com/practice/22948c2cad484e0291350abad86136c3
+1. 最大公约数/最小公倍数：https://www.nowcoder.com/practice/22948c2cad484e0291350abad86136c3 https://leetcode.cn/problems/water-and-jug-problem/description/
+2. 快速幂pow：https://leetcode.cn/problems/powx-n/submissions/
+3. 动态规划：爬楼梯：https://leetcode.cn/problems/climbing-stairs/submissions/
+4. 动态规划：0-1背包问题、多重背包问题、完全背包问题
+5. 动态规划：多维背包问题：https://leetcode.cn/problems/ones-and-zeroes/
+6. 动态规划：组合问题：https://leetcode.cn/problems/coin-change-2/ https://leetcode.cn/problems/combination-sum-iv/
+7. 动态规划：最长上升子序列（LIS）：https://leetcode.cn/problems/longest-increasing-subsequence/submissions/
+8. 动态规划：最长公共子序列（LCS）：https://leetcode.cn/problems/longest-common-subsequence/
+9. 动态规划：最长公共子串：https://leetcode.cn/problems/maximum-length-of-repeated-subarray/
+10. 动态规划：最长的斐波那契子序列：https://leetcode.cn/problems/length-of-longest-fibonacci-subsequence/
+11. 递归：https://leetcode.cn/problems/binary-trees-with-factors/description/
+12. 单调栈/快速幂/质因数分解：https://leetcode.cn/problems/apply-operations-to-maximize-score/
+13. 单调栈：https://leetcode.cn/problems/next-greater-element-ii/
+14. 单调栈：https://leetcode.cn/problems/largest-rectangle-in-histogram/
+15. 单调栈：https://leetcode.cn/problems/maximal-rectangle/
+16. 回溯法：解数独：https://leetcode.cn/problems/sudoku-solver/
+17. 回溯法：N皇后问题：https://leetcode.cn/problems/n-queens/
+18. 字符串哈希：https://leetcode.cn/problems/repeated-dna-sequences/
+19. 字符串哈希：https://leetcode.cn/problems/longest-duplicate-substring/
+20. 字符串哈希：https://leetcode.cn/problems/shortest-palindrome/
+21. 字符串哈希：https://leetcode.cn/problems/maximum-length-of-repeated-subarray/
+22. 字符串哈希：https://leetcode.cn/problems/longest-common-subpath/
+23. KMP算法：子串匹配：https://leetcode.cn/problems/implement-strstr/
+24. 报数游戏（约瑟夫环）：https://leetcode.cn/problems/find-the-winner-of-the-circular-game/
+25. 字典树：https://leetcode.cn/problems/sum-of-prefix-scores-of-strings/
 21. 回文子串：https://leetcode.cn/problems/palindromic-substrings/
 22. 回文子串：https://leetcode.cn/problems/longest-palindromic-substring/
 23. 回文子串：https://leetcode.cn/problems/palindrome-partitioning/
 24. 回文子串：https://leetcode.cn/problems/palindrome-partitioning-ii/
-32. 单调栈：https://leetcode.cn/problems/next-greater-element-ii/
-26. 单调栈：https://leetcode.cn/problems/largest-rectangle-in-histogram/
-27. 单调栈：https://leetcode.cn/problems/maximal-rectangle/
 36. 扫描线问题：https://leetcode.cn/problems/rectangle-area-ii/
 29. 最小生成树MST：prim，Kruskal：一个加点，一个加边
 30. 最短路径问题：Dijkstra
