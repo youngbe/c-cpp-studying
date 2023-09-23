@@ -1,0 +1,51 @@
+XMP
+
+SAM
+
+#PBO2：
+SB
+fmax
+防掉压
+extreme
+PBO2
+
+#C-States：
+C-states
+DF Cstates
+APBDIS
+P0
+ACPI C1 States
+
+#CPPC：
+CPPC
+CPPC prefer core
+PSS
+
+#HPET:
+设备管理器关闭高精度计时
+bcdedit /deletevalue useplatformclock
+bcdedit /set disabledynamictick yes
+
+#内存：
+频率
+电压
+fclk
+Gear down mode
+cmd2T
+uclk
+TSME
+DDR4内存安全
+ECC
+CRC
+
+#其它：
+fTPM
+core watchdog
+L1 stream hw prefetch
+x2APIC
+关闭快速启动，BIOS && Windows
+禁用MPO
+禁用DEP
+禁用内存压缩
+禁用驱动页交换
+
