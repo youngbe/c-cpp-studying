@@ -1,0 +1,21 @@
+apt --no-install-recommends install curl ca-certificates xz-utils vim apt-file cpio
+
+apt --no-install-recommends install clang make flex bison libncurses-dev lld bc llvm libssl-dev
+# only latest
+apt --no-install-recommends install clang-16 make flex bison libncurses-dev lld-16 bc llvm-16 libssl-dev
+
+# latest
+export ARCH=arm64
+export CROSS_COMPILE=aarch64-linux-gnu-
+export LLVM=-16
+
+# linux 5.10
+export LLVM=1
+export LLVM_IAS=1
+
+# linux 4.19
+export CC=clang
+export LD=ld.lld
+
+apt --no-install-recommends install qemu-system-arm ipxe-qemu
+qemu-system-aarch64 -machine virt -cpu cortex-a76 -nographic -smp 1 -m 4g -kernel Image -initrd rootfs_empty_newc.cpio.gz -append 'rdinit=/a.out'
