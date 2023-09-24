@@ -14,11 +14,11 @@ chmod 0777 shm
 
 ## 使用编译的静态tar
 mkdir -p root/temp_for_extra
-wget -O root/temp_for_extra/ubuntu.tar.gz "https://cdimage.ubuntu.com/ubuntu-base/releases/22.04/release/ubuntu-base-22.04-base-arm64.tar.gz"
+curl -Lo root/temp_for_extra/ubuntu.tar.gz "https://cdimage.ubuntu.com/ubuntu-base/releases/22.04/release/ubuntu-base-22.04-base-arm64.tar.gz"
 gzip -d root/temp_for_extra/ubuntu.tar.gz
-wget -O root/temp_for_extra/tar https://github.com/youngbe/c-cpp-studying/raw/main/termux/tar_static_arm64
+curl -Lo root/temp_for_extra/tar https://github.com/youngbe/c-cpp-studying/raw/main/init/tar_static_arm64
 chmod +x root/temp_for_extra/tar
-unset LD_PRELOAD && env -i /data/data/com.termux/files/usr/bin/proot \
+env -i /data/data/com.termux/files/usr/bin/proot \
  -r /data/data/com.termux/files/home/ubuntu/root \
 -0  -w "/" --sysvipc -l --kill-on-exit -v -1 \
 /temp_for_extra/tar --delay-directory-restore --preserve-permissions \
