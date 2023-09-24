@@ -14,7 +14,7 @@ chmod 0777 shm
 
 ## 使用编译的静态tar
 mkdir -p root/temp_for_extra
-curl -Lo root/temp_for_extra/ubuntu.tar.gz "https://cdimage.ubuntu.com/ubuntu-base/releases/22.04/release/ubuntu-base-22.04-base-arm64.tar.gz"
+curl -Lo root/temp_for_extra/ubuntu.tar.gz "https://cdimage.ubuntu.com/ubuntu-base/releases/23.04/release/ubuntu-base-23.04-base-arm64.tar.gz"
 gzip -d root/temp_for_extra/ubuntu.tar.gz
 curl -Lo root/temp_for_extra/tar https://github.com/youngbe/c-cpp-studying/raw/main/init/tar_static_arm64
 chmod +x root/temp_for_extra/tar
