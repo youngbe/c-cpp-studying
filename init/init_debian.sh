@@ -12,7 +12,7 @@ echo 'deb http://apt.llvm.org/mantic/ llvm-toolchain-mantic-17 main' >> /etc/apt
 echo 'deb-src http://apt.llvm.org/mantic/ llvm-toolchain-mantic-17 main' >> /etc/apt/sources.list
 curl -L https://apt.llvm.org/llvm-snapshot.gpg.key | tee /etc/apt/trusted.gpg.d/apt.llvm.org.asc
 apt update
-apt --no-install-recommends -y install gcc g++ libc6-dev clang-17 lld-17 gdb
+apt --no-install-recommends -y install gcc g++ libc6-dev clang-17 lld-17 libunwind-17-dev libc++-17-dev libc++abi-17-dev gdb
 # c/c++:i386
 apt --no-install-recommends -y install libc6-dev-i386 lib32gcc-12-dev
 # or 
@@ -83,7 +83,7 @@ chmod +x /bin/gcc-me /bin/g++-me
 cat > /usr/bin/clang-me << EOF
 #!/bin/bash
 clang-17 \\
-    -Xclang -pic-level -Xclang 0 -fno-addrsig \\
+    -Xclang -pic-level -Xclang 0 -fno-addrsig -DLLVM_ENABLE_RUNTIMES=libunwind -fuse-ld=lld-17 --rtlib=compiler-rt \\
     -fno-float-store -fexcess-precision=fast -funroll-all-loops -Wno-ignored-optimization-argument -Wno-unused-command-line-argument \\
     -fjump-tables -fno-non-call-exceptions -ftrivial-auto-var-init=uninitialized -fzero-call-used-regs=skip -fno-rounding-math \\
     -fomit-frame-pointer -fstrict-aliasing -fdelete-null-pointer-checks -foptimize-sibling-calls -fvectorize -fslp-vectorize -ffast-math -ffp-contract=fast -fno-signed-zeros -fno-trapping-math -funroll-loops \\
