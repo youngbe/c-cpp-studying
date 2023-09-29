@@ -5,7 +5,7 @@ apt --no-install-recommends --auto-remove --purge -y full-upgrade
 apt --no-install-recommends -y install language-pack-zh-hans
 
 # 常用操作
-apt --no-install-recommends -y install git git-lfs openssh-client curl ca-certificates vim tar gzip xz-utils lzma cpio apt-file
+apt --no-install-recommends -y install git git-lfs openssh-client curl ca-certificates vim tar gzip xz-utils bzip2 lzma cpio apt-file
 apt-file update
 # c/c++
 apt --no-install-recommends -y install gcc g++ libc6-dev clang gdb
