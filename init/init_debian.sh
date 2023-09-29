@@ -8,8 +8,8 @@ apt --no-install-recommends -y install language-pack-zh-hans
 apt --no-install-recommends -y install git git-lfs openssh-client curl ca-certificates vim tar gzip xz-utils bzip2 lzma cpio apt-file
 apt-file update
 # c/c++
-echo 'deb http://apt.llvm.org/mantic/ llvm-toolchain-mantic-17 main' >> /etc/apt/sources.list
-echo 'deb-src http://apt.llvm.org/mantic/ llvm-toolchain-mantic-17 main' >> /etc/apt/sources.list
+echo 'deb http://apt.llvm.org/lunar/ llvm-toolchain-lunar-17 main' >> /etc/apt/sources.list
+echo 'deb-src http://apt.llvm.org/lunar/ llvm-toolchain-lunar-17 main' >> /etc/apt/sources.list
 curl -L https://apt.llvm.org/llvm-snapshot.gpg.key | tee /etc/apt/trusted.gpg.d/apt.llvm.org.asc
 apt update
 apt --no-install-recommends -y install gcc g++ libc6-dev clang-17 lld-17 libclang-rt-17-dev libunwind-17-dev libc++-17-dev gdb
