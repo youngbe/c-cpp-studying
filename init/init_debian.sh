@@ -8,6 +8,8 @@ apt --no-install-recommends -y install language-pack-zh-hans
 apt --no-install-recommends -y install git git-lfs openssh-client curl ca-certificates vim tar gzip xz-utils bzip2 lzma cpio apt-file
 apt-file update
 # c/c++
+echo 'deb http://apt.llvm.org/mantic/ llvm-toolchain-mantic-17 main' >> /etc/apt/sources.list
+echo 'deb-src http://apt.llvm.org/mantic/ llvm-toolchain-mantic-17 main' >> /etc/apt/sources.list
 apt --no-install-recommends -y install gcc g++ libc6-dev clang gdb
 # c/c++:i386
 apt --no-install-recommends -y install libc6-dev-i386 lib32gcc-12-dev
