@@ -10,6 +10,7 @@ apt-file update
 # c/c++
 echo 'deb http://apt.llvm.org/mantic/ llvm-toolchain-mantic-17 main' >> /etc/apt/sources.list
 echo 'deb-src http://apt.llvm.org/mantic/ llvm-toolchain-mantic-17 main' >> /etc/apt/sources.list
+curl -L https://apt.llvm.org/llvm-snapshot.gpg.key | sudo tee /etc/apt/trusted.gpg.d/apt.llvm.org.asc | tee /etc/apt/trusted.gpg.d/apt.llvm.org.asc
 apt --no-install-recommends -y install gcc g++ libc6-dev clang gdb
 # c/c++:i386
 apt --no-install-recommends -y install libc6-dev-i386 lib32gcc-12-dev
