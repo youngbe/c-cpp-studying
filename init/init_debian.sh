@@ -8,7 +8,17 @@ apt --no-install-recommends -y install language-pack-zh-hans
 apt --no-install-recommends -y install git git-lfs openssh-client curl ca-certificates vim tar gzip xz-utils lzma cpio apt-file
 apt-file update
 # c/c++
-apt --no-install-recommends -y install gcc g++ libc6-dev clang gdb libc6-dev-i386 lib32gcc-12-dev gcc-aarch64-linux-gnu
+apt --no-install-recommends -y install gcc g++ libc6-dev clang gdb
+# c/c++:i386
+apt --no-install-recommends -y install libc6-dev-i386 lib32gcc-12-dev
+# or 
+apt --no-install-recommends -y install libc6-dev-amd64-cross libc6-dev-i386-amd64-cross lib32gcc-12-dev
+# or
+apt --no-install-recommends -y install libc6-dev:i386 lib32gcc-12-dev
+# or
+apt --no-install-recommends -y install gcc-i686-linux-gnu
+# c/c++: arm64
+apt --no-install-recommends -y install gcc-aarch64-linux-gnu libc6-dev-arm64-cross
 # 内核编译
 apt --no-install-recommends -y install clang ld-lld llvm make bc flex bison python3-mininal libelf-dev libssl-dev
 
