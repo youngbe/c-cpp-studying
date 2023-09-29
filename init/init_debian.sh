@@ -4,7 +4,17 @@ apt --no-install-recommends -y install whiptail
 apt --no-install-recommends --auto-remove --purge -y full-upgrade
 apt --no-install-recommends -y install language-pack-zh-hans
 
-#apt --no-install-recommends install open-vm-tools-desktop
+# 常用操作
+apt --no-install-recommends -y install git git-lfs openssh-client curl ca-certificates vim tar gzip xz-utils lzma cpio
+# c/c++
+apt --no-install-recommends -y install gcc g++ libc6-dev clang gdb libc6-dev-i386 lib32gcc-12-dev gcc-aarch64-linux-gnu
+# 内核编译
+apt --no-install-recommends -y install clang ld-lld llvm make bc flex bison python3-mininal libelf-dev libssl-dev
+
+
+
+
+
 #apt --no-install-recommends install openjdk-18-jdk-headless python3-minimal python3-pip mysql-server
 apt --no-install-recommends install vim gcc libc6-dev clang g++ git openssh-client make gdb gedit
 # -m32 路线一 (gcc-multilib默认路线)
