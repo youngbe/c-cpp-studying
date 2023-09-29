@@ -16,7 +16,7 @@ apt --no-install-recommends -y install libc6-dev-amd64-cross libc6-dev-i386-amd6
 # or
 apt --no-install-recommends -y install libc6-dev:i386 lib32gcc-12-dev
 # or
-apt --no-install-recommends -y install gcc-i686-linux-gnu
+apt --no-install-recommends -y install gcc-i686-linux-gnu libc6-dev-i386-cross
 # c/c++: arm64
 apt --no-install-recommends -y install gcc-aarch64-linux-gnu libc6-dev-arm64-cross
 # 内核编译
