@@ -22,7 +22,9 @@ apt --no-install-recommends -y install libc6-dev:i386 lib32gcc-12-dev
 # or
 apt --no-install-recommends -y install gcc-i686-linux-gnu libc6-dev-i386-cross
 # c/c++: arm64
-apt --no-install-recommends -y install gcc-aarch64-linux-gnu libc6-dev-arm64-cross
+dpkg --add-architecture arm64
+apt update
+apt --no-install-recommends -y install gcc-aarch64-linux-gnu libc6-dev-arm64-cross g++-aarch64-linux-gnu libclang-rt-17-dev:arm64
 # c/c++: arm32
 apt --no-install-recommends -y install gcc-arm-linux-gnueabi libc6-dev-armel-cross
 # c/c++: armhf
