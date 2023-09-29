@@ -12,7 +12,7 @@ echo 'deb http://apt.llvm.org/mantic/ llvm-toolchain-mantic-17 main' >> /etc/apt
 echo 'deb-src http://apt.llvm.org/mantic/ llvm-toolchain-mantic-17 main' >> /etc/apt/sources.list
 curl -L https://apt.llvm.org/llvm-snapshot.gpg.key | tee /etc/apt/trusted.gpg.d/apt.llvm.org.asc
 apt update
-apt --no-install-recommends -y install gcc g++ libc6-dev clang gdb
+apt --no-install-recommends -y install gcc g++ libc6-dev clang-17 lld-17 gdb
 # c/c++:i386
 apt --no-install-recommends -y install libc6-dev-i386 lib32gcc-12-dev
 # or 
@@ -23,8 +23,12 @@ apt --no-install-recommends -y install libc6-dev:i386 lib32gcc-12-dev
 apt --no-install-recommends -y install gcc-i686-linux-gnu libc6-dev-i386-cross
 # c/c++: arm64
 apt --no-install-recommends -y install gcc-aarch64-linux-gnu libc6-dev-arm64-cross
+# c/c++: arm32
+apt --no-install-recommends -y install gcc-arm-linux-gnueabi libc6-dev-armel-cross
+# c/c++: armhf
+apt --no-install-recommends -y install gcc-arm-linux-gnueabihf libc6-dev-armhf-cross
 # 内核编译
-apt --no-install-recommends -y install clang ld-lld llvm make bc flex bison python3-mininal libelf-dev libssl-dev
+apt --no-install-recommends -y install clang-17 lld-17 llvm-17 make bc flex bison python3-mininal libelf-dev libssl-dev
 
 
 
