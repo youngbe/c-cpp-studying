@@ -13,6 +13,10 @@ export LLVM=-16
 export LLVM=1
 export LLVM_IAS=1
 
+make CC=clang-17 LD=ld.lld-17 AR=llvm-ar-17 NM=llvm-nm-17 STRIP=llvm-strip-17 \
+  OBJCOPY=llvm-objcopy-17 OBJDUMP=llvm-objdump-17 READELF=llvm-readelf-17 \
+  HOSTCC=clang-17 HOSTCXX=clang++-17 HOSTAR=llvm-ar-17 HOSTLD=ld.lld-17
+
 # linux 4.19
 export CC=clang
 export LD=ld.lld
