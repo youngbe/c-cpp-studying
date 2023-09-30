@@ -30,7 +30,7 @@ apt --no-install-recommends -y install gcc-arm-linux-gnueabi libc6-dev-armel-cro
 # c/c++: armhf
 apt --no-install-recommends -y install gcc-arm-linux-gnueabihf libc6-dev-armhf-cross
 # 内核编译
-apt --no-install-recommends -y install clang-17 lld-17 llvm-17 make bc flex bison python3-mininal libelf-dev libssl-dev
+apt --no-install-recommends -y install clang-17 lld-17 llvm-17 make bc flex bison python3-minimal libelf-dev libssl-dev dwarves
 
 
 
