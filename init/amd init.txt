@@ -14,7 +14,7 @@ C-states
 DF Cstates
 APBDIS
 P0
-ACPI C1 States
+#ACPI C1 States
 
 #CPPC：
 CPPC
