@@ -29,4 +29,4 @@ make ARCH=arm64 LLVM=1 LLVM_IAS=1 CC=clang-17 LD=ld.lld-17 AR=llvm-ar-17 NM=llvm
 apt --no-install-recommends install qemu-system-arm ipxe-qemu
 qemu-system-aarch64 -machine virt -cpu cortex-a76 -nographic -smp 1 -m 4g -kernel Image -initrd rootfs_empty_newc.cpio.gz -append 'nokslr rdinit=/a.out'
 apt --no-install-recommends install qemu-system-x86
-qemu-system-x86_64 -accel kvm -cpu host -nographic -smp 1 -m 2g -kernel bzImage -drive file=disk.ext4,format=raw -append 'console=ttyS0 root=/dev/sda init=/a.out'
+qemu-system-x86_64 -accel kvm -cpu host -nographic -smp 1 -m 2g -kernel bzImage -drive file=disk.ext4,format=raw -append 'console=ttyS0 root=/dev/sda ro init=/a.out'
