@@ -86,7 +86,7 @@ chmod +x /bin/gcc-me /bin/g++-me
 
 cat > /usr/bin/clang-me << EOF
 #!/bin/bash
-clang-17 \\
+clang${llvm_version} \\
     -Xclang -pic-level -Xclang 0 -fno-addrsig -fuse-ld=lld-17 --rtlib=compiler-rt -unwindlib=libunwind \\
     -fno-float-store -fexcess-precision=fast -funroll-all-loops -Wno-ignored-optimization-argument -Wno-unused-command-line-argument \\
     -fjump-tables -fno-non-call-exceptions -ftrivial-auto-var-init=uninitialized -fzero-call-used-regs=skip -fno-rounding-math \\
@@ -99,7 +99,7 @@ EOF
 
 cat > /usr/bin/clang++-me << EOF
 #!/bin/bash
-clang++-17 \\
+clang++${llvm_version} \\
     -Xclang -pic-level -Xclang 0 -fno-addrsig -fuse-ld=lld-17 --rtlib=compiler-rt -unwindlib=libunwind -stdlib=libc++ \\
     -fno-float-store -fexcess-precision=fast -funroll-all-loops -Wno-ignored-optimization-argument -Wno-unused-command-line-argument \\
     -fjump-tables -fno-non-call-exceptions -ftrivial-auto-var-init=uninitialized -fzero-call-used-regs=skip -fno-rounding-math \\
@@ -137,7 +137,7 @@ chmod +x /bin/aarch64-gcc-me /bin/aarch64-g++-me
 
 cat > /usr/bin/aarch64-clang-me << EOF
 #!/bin/bash
-clang-17 \\
+clang${llvm_version} \\
     --target=aarch64-linux-gnu \\
     -Xclang -pic-level -Xclang 0 -fno-addrsig -fuse-ld=lld-17 --rtlib=compiler-rt \\
     -fno-float-store -fexcess-precision=fast -funroll-all-loops -Wno-ignored-optimization-argument -Wno-unused-command-line-argument \\
@@ -151,7 +151,7 @@ EOF
 
 cat > /usr/bin/aarch64-clang++-me << EOF
 #!/bin/bash
-clang++-17 \\
+clang++${llvm_version} \\
     --target=aarch64-linux-gnu \\
     -Xclang -pic-level -Xclang 0 -fno-addrsig -fuse-ld=lld-17 --rtlib=compiler-rt \\
     -fno-float-store -fexcess-precision=fast -funroll-all-loops -Wno-ignored-optimization-argument -Wno-unused-command-line-argument \\
