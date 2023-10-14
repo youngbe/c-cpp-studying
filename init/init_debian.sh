@@ -4,27 +4,29 @@ apt --no-install-recommends -y install whiptail
 apt --no-install-recommends --auto-remove --purge -y full-upgrade
 apt --no-install-recommends -y install language-pack-zh-hans
 
+llvm_version="-17"
+
 # 常用操作
 apt --no-install-recommends -y install git git-lfs openssh-client curl ca-certificates vim tar gzip xz-utils bzip2 lzma cpio apt-file dpkg-dev iputils-ping bind9-dnsutils
 apt-file update
 # c/c++
-echo 'deb http://apt.llvm.org/lunar/ llvm-toolchain-lunar-17 main' >> /etc/apt/sources.list
-echo 'deb-src http://apt.llvm.org/lunar/ llvm-toolchain-lunar-17 main' >> /etc/apt/sources.list
-curl -L https://apt.llvm.org/llvm-snapshot.gpg.key | tee /etc/apt/trusted.gpg.d/apt.llvm.org.asc
-apt update
-apt --no-install-recommends -y install gcc g++ libc6-dev clang-17 lld-17 libclang-rt-17-dev libunwind-17-dev libc++-17-dev libc++abi-17-dev gdb
+#echo 'deb http://apt.llvm.org/lunar/ llvm-toolchain-lunar-17 main' >> /etc/apt/sources.list
+#echo 'deb-src http://apt.llvm.org/lunar/ llvm-toolchain-lunar-17 main' >> /etc/apt/sources.list
+#curl -L https://apt.llvm.org/llvm-snapshot.gpg.key | tee /etc/apt/trusted.gpg.d/apt.llvm.org.asc
+#apt update
+apt --no-install-recommends -y install gcc g++ libc6-dev "clang${llvm_version}" "lld${llvm_version}" "libclang-rt${llvm_version}-dev" "libunwind${llvm_version}-dev" "libc++${llvm_version}-dev" "libc++abi${llvm_version}-dev" gdb
 # c/c++:i386
-apt --no-install-recommends -y install libc6-dev-i386 lib32gcc-12-dev
+apt --no-install-recommends -y install libc6-dev-i386 lib32gcc-13-dev
 # or 
-apt --no-install-recommends -y install libc6-dev-amd64-cross libc6-dev-i386-amd64-cross lib32gcc-12-dev
+apt --no-install-recommends -y install libc6-dev-amd64-cross libc6-dev-i386-amd64-cross lib32gcc-13-dev
 # or
-apt --no-install-recommends -y install libc6-dev:i386 lib32gcc-12-dev
+apt --no-install-recommends -y install libc6-dev:i386 lib32gcc-13-dev
 # or
 apt --no-install-recommends -y install gcc-i686-linux-gnu libc6-dev-i386-cross
 # c/c++: arm64
 dpkg --add-architecture arm64
 apt update
-apt --no-install-recommends -y install gcc-aarch64-linux-gnu libc6-dev-arm64-cross g++-aarch64-linux-gnu libclang-rt-17-dev:arm64
+apt --no-install-recommends -y install gcc-aarch64-linux-gnu libc6-dev-arm64-cross g++-aarch64-linux-gnu "libclang-rt${llvm_version}-dev:arm64"
 # c/c++: arm32
 apt --no-install-recommends -y install gcc-arm-linux-gnueabi libc6-dev-armel-cross
 # c/c++: armhf
