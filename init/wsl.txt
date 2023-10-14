@@ -2,9 +2,9 @@ wsl --install --no-distribution -n
 wsl --update
 wsl --version
 wsl --set-default-version 2
-wsl --import Ubuntu-23.04 E:\wsl\ubuntu E:\wsl\files\ubuntu-base-23.04-base-amd64.tar.gz --version 2
-#wsl -d Ubuntu-23.04 -e /bin/su -l root
-wsl -d Ubuntu-23.04 -u root --cd /root -e /bin/bash --login
+wsl --import Ubuntu-23.10 f:\wsl\ubuntu_23_10 F:\wsl\files\ubuntu-base-23.10-base-amd64.tar.gz --version 2
+#wsl -d Ubuntu-23.10 -e /bin/su -l root
+wsl -d Ubuntu-23.10 -u root --cd /root -e /bin/bash --login
 
 sed -i 's@^deb http://archive.ubuntu.com/ubuntu/@deb \[ arch=amd64,i386 \] http://repo.huaweicloud.com/ubuntu/@g' /etc/apt/sources.list
 sed -i 's@^deb http://security.ubuntu.com/ubuntu/@deb \[ arch=amd64,i386 \] http://repo.huaweicloud.com/ubuntu/@g' /etc/apt/sources.list
@@ -26,10 +26,10 @@ echo 'systemd=true' >> /etc/wsl.conf
 exit
 
 wsl --shutdown
-wsl -d Ubuntu-23.04 -u root --cd /root -e /bin/bash --login
+wsl -d Ubuntu-23.10 -u root --cd /root -e /bin/bash --login
 
 
 # 其它：
 wsl -l --all -v
 wsl --shutdown
-wsl --unregister Ubuntu-23.04
+wsl --unregister Ubuntu-23.10
