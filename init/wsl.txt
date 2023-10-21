@@ -23,6 +23,7 @@ export LANG=zh_CN.utf8 LANGUAGE=zh_CN.utf8
 echo "export LANG=zh_CN.utf8 LANGUAGE=zh_CN.utf8" >> "$HOME/.profile"
 echo '[boot]' > /etc/wsl.conf
 echo 'systemd=true' >> /etc/wsl.conf
+echo 'export QT_GRAPHICSSYSTEM=native' >> "/root/.profile"
 exit
 
 wsl --shutdown
