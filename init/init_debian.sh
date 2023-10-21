@@ -171,7 +171,7 @@ chmod +x /bin/aarch64-clang-me /bin/aarch64-clang++-me
 cat >> /usr/share/vim/vim90/defaults.vim <<EOF
 
 set mouse-=a
-#set expandtab
+"set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
