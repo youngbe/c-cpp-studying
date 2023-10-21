@@ -1,14 +1,17 @@
 apt update
-apt --no-install-recommends -y install apt-utils
-apt --no-install-recommends -y install whiptail
-apt --no-install-recommends --auto-remove --purge -y full-upgrade
-apt --no-install-recommends -y install language-pack-zh-hans
 
 llvm_version="-17"
 
 # 常用操作
 apt --no-install-recommends -y install git git-lfs openssh-client curl ca-certificates vim tar gzip xz-utils bzip2 lzma cpio apt-file dpkg-dev iputils-ping bind9-dnsutils
 apt-file update
+
+# bcompare
+# 中文GUI字体显示
+apt --no-install-recommends -y install fonts-noto-cjk-extra fonts-noto-cjk
+[ "$EUID" == 0 ] && export QT_GRAPHICSSYSTEM=native
+echo 'export QT_GRAPHICSSYSTEM=native' >> "/root/.profile"
+
 # c/c++
 #echo 'deb http://apt.llvm.org/lunar/ llvm-toolchain-lunar-17 main' >> /etc/apt/sources.list
 #echo 'deb-src http://apt.llvm.org/lunar/ llvm-toolchain-lunar-17 main' >> /etc/apt/sources.list
