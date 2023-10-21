@@ -33,3 +33,4 @@ wsl -d Ubuntu-23.10 -u root --cd /root -e /bin/bash --login
 wsl -l --all -v
 wsl --shutdown
 wsl --unregister Ubuntu-23.10
+wsl -d Ubuntu-23.10 hostname -I
