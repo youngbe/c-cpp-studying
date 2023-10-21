@@ -7,8 +7,8 @@ apt --no-install-recommends -y install git git-lfs openssh-client curl ca-certif
 apt-file update
 
 # bcompare
-# 中文GUI字体显示
-apt --no-install-recommends -y install fonts-noto-cjk-extra fonts-noto-cjk
+# fonts-noto-cjk-extra fonts-noto-cjk:中文GUI字体显示
+apt --no-install-recommends -y install fonts-noto-cjk-extra fonts-noto-cjk shared-mime-info
 [ "$EUID" == 0 ] && export QT_GRAPHICSSYSTEM=native
 echo 'export QT_GRAPHICSSYSTEM=native' >> "/root/.profile"
 
