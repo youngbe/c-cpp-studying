@@ -189,6 +189,9 @@ cat >> ~/.inputrc << EOF
 "\e[F": end-of-line
 EOF
 
+sed -i '/^HISTSIZE=/d' ~/.bashrc
+sed -i '/^HISTFILESIZE=/d' ~/.bashrc
+sed -i '/^HISTTIMEFORMAT=/d' ~/.bashrc
 cat >> ~/.bashrc << EOF
 HISTSIZE=-1
 HISTFILESIZE=-1
