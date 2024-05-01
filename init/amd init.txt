@@ -14,6 +14,7 @@ C-states
 DF Cstates
 APBDIS
 P0
+power supply idle control = typical current idle
 #ACPI C1 States
 
 ## CPPC
@@ -37,7 +38,6 @@ core watchdog
 L1 stream hw prefetch
 x2APIC
 快速启动
-power supply idle control = typical current idle
 asid = 509
 mca error thresh enable
 PPIN Opt-in
