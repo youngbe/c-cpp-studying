@@ -59,6 +59,7 @@ bcdedit /deletevalue useplatformclock
 bcdedit /set disabledynamictick yes
 
 # 2. 其它
+禁用异类调度
 禁用测通道缓解
 关闭快速启动
 禁用MPO
