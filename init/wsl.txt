@@ -14,6 +14,9 @@ sed -i 's@^# deb-src http://security.ubuntu.com/ubuntu/@deb-src \[ arch=amd64,i3
 sed -i 's@^deb http://ports.ubuntu.com/ubuntu-ports/@deb \[ arch=arm64,armhf \] http://repo.huaweicloud.com/ubuntu-ports/@g' /etc/apt/sources.list
 sed -i 's@^# deb-src http://ports.ubuntu.com/ubuntu-ports/@deb-src \[ arch=arm64,armhf \] http://repo.huaweicloud.com/ubuntu-ports/@g' /etc/apt/sources.list
 
+sed -i 's@^URIs: http://archive.ubuntu.com/ubuntu/@URIs: http://repo.huaweicloud.com/ubuntu/@g' /etc/apt/sources.list
+sed -i 's@^URIs: http://security.ubuntu.com/ubuntu/@URIs: http://repo.huaweicloud.com/ubuntu/@g' /etc/apt/sources.list
+
 apt update
 apt --no-install-recommends -y install apt-utils
 apt --no-install-recommends -y install whiptail
