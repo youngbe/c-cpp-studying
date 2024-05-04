@@ -3,7 +3,7 @@ apt update
 llvm_version="-17"
 
 # 常用操作
-apt --no-install-recommends -y install git git-lfs openssh-client curl ca-certificates vim tar gzip xz-utils bzip2 lzma cpio apt-file dpkg-dev iputils-ping bind9-dnsutils
+apt --no-install-recommends -y install git git-lfs openssh-client wget curl ca-certificates vim tar gzip xz-utils bzip2 lzma cpio apt-file dpkg-dev iputils-ping bind9-dnsutils
 apt-file update
 
 # bcompare
