@@ -12,15 +12,10 @@ sed -i 's@^deb http://security.ubuntu.com/ubuntu/@deb \[ arch=amd64,i386 \] http
 sed -i 's@^# deb-src http://archive.ubuntu.com/ubuntu/@deb-src \[ arch=amd64,i386 \] http://repo.huaweicloud.com/ubuntu/@g' /etc/apt/sources.list
 sed -i 's@^# deb-src http://security.ubuntu.com/ubuntu/@deb-src \[ arch=amd64,i386 \] http://repo.huaweicloud.com/ubuntu/@g' /etc/apt/sources.list
 
-sed -i 's@^deb http://ports.ubuntu.com/ubuntu-ports/@deb \[ arch=arm64,armhf \] http://repo.huaweicloud.com/ubuntu-ports/@g' /etc/apt/sources.list
-sed -i 's@^# deb-src http://ports.ubuntu.com/ubuntu-ports/@deb-src \[ arch=arm64,armhf \] http://repo.huaweicloud.com/ubuntu-ports/@g' /etc/apt/sources.list
-
 # 新版本sources.list
 sed -i 's@^URIs: http://archive.ubuntu.com/ubuntu/@URIs: http://repo.huaweicloud.com/ubuntu/@g' /etc/apt/sources.list.d/ubuntu.sources
 sed -i 's@^URIs: http://security.ubuntu.com/ubuntu/@URIs: http://repo.huaweicloud.com/ubuntu/@g' /etc/apt/sources.list.d/ubuntu.sources
-
-手动添加：
-Architectures: amd64,i386
+sed -i 's@^Types: deb@Types: deb-src deb@g' /etc/apt/sources.list.d/ubuntu.sources
 
 apt update
 apt --no-install-recommends -y install apt-utils
