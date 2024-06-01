@@ -1,5 +1,5 @@
 #!/bin/bash
 
-source /bin/gcc-me
+source /bin/gcc-option
 
 gcc-14 "${args[@]}" "$@"
