@@ -8,14 +8,14 @@ wsl --import Ubuntu-24.04 f:\wsl\ubuntu_24_04 E:\xiazai\ubuntu-base-24.04-base-a
 wsl -d Ubuntu-24.04 -u root --cd /root -e /bin/login -p -f root
 
 # 老版本sources.list
-sed -i 's@^deb http://archive.ubuntu.com/ubuntu/@deb \[ arch=amd64,i386 \] http://repo.huaweicloud.com/ubuntu/@g' /etc/apt/sources.list
-sed -i 's@^deb http://security.ubuntu.com/ubuntu/@deb \[ arch=amd64,i386 \] http://repo.huaweicloud.com/ubuntu/@g' /etc/apt/sources.list
-sed -i 's@^# deb-src http://archive.ubuntu.com/ubuntu/@deb-src \[ arch=amd64,i386 \] http://repo.huaweicloud.com/ubuntu/@g' /etc/apt/sources.list
-sed -i 's@^# deb-src http://security.ubuntu.com/ubuntu/@deb-src \[ arch=amd64,i386 \] http://repo.huaweicloud.com/ubuntu/@g' /etc/apt/sources.list
+sed -i 's@^deb http://archive.ubuntu.com/ubuntu/@deb \[ arch=amd64,i386 \] http://mirrors.huaweicloud.com/ubuntu/@g' /etc/apt/sources.list
+sed -i 's@^deb http://security.ubuntu.com/ubuntu/@deb \[ arch=amd64,i386 \] http://mirrors.huaweicloud.com/ubuntu/@g' /etc/apt/sources.list
+sed -i 's@^# deb-src http://archive.ubuntu.com/ubuntu/@deb-src \[ arch=amd64,i386 \] http://mirrors.huaweicloud.com/ubuntu/@g' /etc/apt/sources.list
+sed -i 's@^# deb-src http://security.ubuntu.com/ubuntu/@deb-src \[ arch=amd64,i386 \] http://mirrors.huaweicloud.com/ubuntu/@g' /etc/apt/sources.list
 
 # 新版本sources.list
-sed -i 's@^URIs: http://archive.ubuntu.com/ubuntu/@URIs: http://repo.huaweicloud.com/ubuntu/@g' /etc/apt/sources.list.d/ubuntu.sources
-sed -i 's@^URIs: http://security.ubuntu.com/ubuntu/@URIs: http://repo.huaweicloud.com/ubuntu/@g' /etc/apt/sources.list.d/ubuntu.sources
+sed -i 's@^URIs: http://archive.ubuntu.com/ubuntu/@URIs: http://mirrors.huaweicloud.com/ubuntu/@g' /etc/apt/sources.list.d/ubuntu.sources
+sed -i 's@^URIs: http://security.ubuntu.com/ubuntu/@URIs: http://mirrors.huaweicloud.com/ubuntu/@g' /etc/apt/sources.list.d/ubuntu.sources
 sed -i 's@^Types: deb@Types: deb-src deb@g' /etc/apt/sources.list.d/ubuntu.sources
 
 apt update
